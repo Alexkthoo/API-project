@@ -7,8 +7,6 @@ const { User } = require("../../db/models");
 const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
 
-const router = express.Router();
-
 const validateLogin = [
   check("credential")
     .exists({ checkFalsy: true })
@@ -20,6 +18,7 @@ const validateLogin = [
   handleValidationErrors,
 ];
 
+const router = express.Router();
 // Log in
 // Log in
 router.post("/", validateLogin, async (req, res, next) => {
