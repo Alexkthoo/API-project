@@ -16,11 +16,11 @@ module.exports = {
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false,
+        rejectUnauthorized: false
       },
     },
     define: {
-      schema: process.env.SCHEMA,
+      schema: process.env.SCHEMA
     },
   },
 };
