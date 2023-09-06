@@ -7,18 +7,22 @@ const { User } = require("../../db/models");
 const router = express.Router();
 
 const validateSignup = [
-  check("firstName").exists({ checkFalsy: true }),
-  check("lastName").exists({ checkFalsy: true }),
   check("email")
     .exists({ checkFalsy: true })
     .isEmail()
-    .withMessage("Please provide a valid email."),
+    .withMessage("Invalid email"),
   check("username")
     .exists({ checkFalsy: true })
     .isLength({ min: 4 })
-    .withMessage("Please provide a username with at least 4 characters."),
-  check("username").not().isEmail().withMessage("Username cannot be an email."),
-  check("password")
+    .withMessage("Username is required"),
+  check("username").not().isEmail().withMessage("Username is required"),
+  check("firstName")
+    .exists({ checkFalsy: true })
+    .withMessage("First Name is required"),
+  check("lastName")
+    .exists({ checkFalsy: true })
+    .withMessage("Last Name is required"),
+  check("password") // turning off due to example from sign up a user readme.
     .exists({ checkFalsy: true })
     .isLength({ min: 6 })
     .withMessage("Password must be 6 characters or more."),
@@ -28,12 +32,31 @@ const validateSignup = [
 // Sign up
 router.post("", validateSignup, async (req, res) => {
   const { firstName, lastName, email, password, username } = req.body;
+
+  const existingEmail = await User.findOne({ where: { email } });
+  if (existingEmail) {
+    // Email is not unique, send a custom error message
+    return res.status(500).json({
+      message: "User already exists",
+      errors: { email: "User with that email already exists" },
+    });
+  }
+
+  const existingUser = await User.findOne({ where: { username } });
+  if (existingUser) {
+    // username is not unique, send a custom error message
+    return res.status(500).json({
+      message: "User already exists",
+      errors: { username: "User with that username already exists" },
+    });
+  }
+
   const hashedPassword = bcrypt.hashSync(password);
   const user = await User.create({
     firstName,
     lastName,
-    username,
     email,
+    username,
     hashedPassword,
   });
 
@@ -41,8 +64,8 @@ router.post("", validateSignup, async (req, res) => {
     id: user.id,
     firstName: user.firstName,
     lastName: user.lastName,
-    username: user.username,
     email: user.email,
+    username: user.username,
   };
 
   await setTokenCookie(res, safeUser);
