@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
       Review.hasMany(models.ReviewImage, {
         foreignkey: "reviewId",
       });
+
+      Review.belongsTo(models.User, {
+        foreignkey: "userId",
+      });
     }
   }
   Review.init(
