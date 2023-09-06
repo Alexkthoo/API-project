@@ -7,9 +7,9 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    options.tableName = "ReviewImages";
+    options.tableName = "Bookings";
     await queryInterface.createTable(
-      "ReviewImages",
+      "Bookings",
       {
         id: {
           allowNull: false,
@@ -17,29 +17,34 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER,
         },
-        reviewId: {
+        spotId: {
           type: Sequelize.INTEGER,
-          references: { model: "Reviews" },
+          references: { model: "Spots" },
         },
-        url: {
-          type: Sequelize.STRING,
+        userId: {
+          type: Sequelize.INTEGER,
+          references: { model: "Users" },
+        },
+        startDate: {
+          type: Sequelize.DATEONLY,
+        },
+        endDate: {
+          type: Sequelize.DATEONLY,
         },
         createdAt: {
           allowNull: false,
           type: Sequelize.DATE,
-          defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
         },
         updatedAt: {
           allowNull: false,
           type: Sequelize.DATE,
-          defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
         },
       },
       options
     );
   },
   async down(queryInterface, Sequelize) {
-    options.tableName = "ReviewImages";
-    await queryInterface.dropTable("ReviewImages");
+    options.tableName = "Bookings";
+    await queryInterface.dropTable("Bookings");
   },
 };
