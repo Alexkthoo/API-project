@@ -15,24 +15,34 @@ module.exports = {
       [
         {
           spotId: 1,
-          url: "picture1.url",
+          url: "pic1",
         },
         {
           spotId: 2,
-          url: "picture2.url",
+          url: "pic2",
+        },
+        {
+          spotId: 3,
+          url: "pic3",
         },
       ],
       { validate: true }
     );
   },
 
+  //   async down(queryInterface, Sequelize) {
+  //     options.tableName = "SpotImages";
+  //     const Op = Sequelize.Op;
+  //     return queryInterface.bulkDelete(options, {
+  //       spotId: {
+  //         [Op.in]: [1, 2, 3],
+  //       },
+  //     });
+  //   },
+  // };
+
   async down(queryInterface, Sequelize) {
     options.tableName = "SpotImages";
-    const Op = Sequelize.Op;
-    return queryInterface.bulkDelete(options, {
-      spotId: {
-        [Op.in]: [1, 2],
-      },
-    });
+    return queryInterface.bulkDelete(options);
   },
 };

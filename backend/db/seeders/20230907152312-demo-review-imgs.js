@@ -15,28 +15,34 @@ module.exports = {
       [
         {
           reviewId: 1,
-          url: "https://sample.com/review-image1.jpg",
+          url: "test1",
         },
         {
           reviewId: 2,
-          url: "https://sample.com/review-image2.jpg",
+          url: "test2",
         },
         {
           reviewId: 3,
-          url: "https://sample.com/review-image3.jpg",
+          url: "test3",
         },
       ],
       { validate: true }
     );
   },
 
+  //   async down(queryInterface, Sequelize) {
+  //     options.tableName = "ReviewImages";
+  //     const Op = Sequelize.Op;
+  //     return queryInterface.bulkDelete(options, {
+  //       reviewId: {
+  //         [Op.in]: [1, 2, 3],
+  //       },
+  //     });
+  //   },
+  // };
+
   async down(queryInterface, Sequelize) {
     options.tableName = "ReviewImages";
-    const Op = Sequelize.Op;
-    return queryInterface.bulkDelete(options, {
-      reviewId: {
-        [Op.in]: [1, 2, 3],
-      },
-    });
+    return queryInterface.bulkDelete(options);
   },
 };

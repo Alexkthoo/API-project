@@ -15,33 +15,39 @@ module.exports = {
         {
           spotId: 1,
           userId: 1,
-          startDate: "2023-09-05",
-          endDate: "2023-09-07",
+          startDate: "2022-04-05",
+          endDate: "2022-05-01",
         },
         {
           spotId: 2,
           userId: 2,
-          startDate: "2023-09-07",
-          endDate: "2023-09-09",
+          startDate: "2023-07-07",
+          endDate: "2023-09-29",
         },
         {
           spotId: 3,
           userId: 3,
-          startDate: "2024-01-01",
-          endDate: "2024-02-01",
+          startDate: "2024-04-01",
+          endDate: "2024-05-15",
         },
       ],
       { validate: true }
     );
   },
 
+  //   async down(queryInterface, Sequelize) {
+  //     options.tableName = "Bookings";
+  //     const Op = Sequelize.Op;
+  //     return queryInterface.bulkDelete(options, {
+  //       spotId: {
+  //         [Op.in]: [1, 2, 3],
+  //       },
+  //     });
+  //   },
+  // };
+
   async down(queryInterface, Sequelize) {
     options.tableName = "Bookings";
-    const Op = Sequelize.Op;
-    return queryInterface.bulkDelete(options, {
-      spotId: {
-        [Op.in]: [1, 2, 3],
-      },
-    });
+    return queryInterface.bulkDelete(options);
   },
 };

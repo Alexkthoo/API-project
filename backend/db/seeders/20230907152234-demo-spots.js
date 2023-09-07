@@ -58,17 +58,23 @@ module.exports = {
     );
   },
 
+  //   async down(queryInterface, Sequelize) {
+  //     options.tableName = "Spots";
+  //     const Op = Sequelize.Op;
+  //     return queryInterface.bulkDelete(options, {
+  //       name: {
+  //         [Op.in]: [
+  //           "Central Park",
+  //           "Hollywood Walk of Fame",
+  //           "Golden Gate Bridge",
+  //         ],
+  //       },
+  //     });
+  //   },
+  // };
+
   async down(queryInterface, Sequelize) {
     options.tableName = "Spots";
-    const Op = Sequelize.Op;
-    return queryInterface.bulkDelete(options, {
-      name: {
-        [Op.in]: [
-          "Central Park",
-          "Hollywood Walk of Fame",
-          "Golden Gate Bridge",
-        ],
-      },
-    });
+    return queryInterface.bulkDelete(options);
   },
 };

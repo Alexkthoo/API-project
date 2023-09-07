@@ -39,11 +39,17 @@ module.exports = {
     );
   },
 
+  //   async down(queryInterface, Sequelize) {
+  //     options.tableName = "Users";
+  //     const Op = Sequelize.Op;
+  //     return queryInterface.bulkDelete(options, {
+  //       username: { [Op.in]: ["ggnore", "Yoshinoya", "thegrumpyman"] },
+  //     });
+  //   },
+  // };
+
   async down(queryInterface, Sequelize) {
     options.tableName = "Users";
-    const Op = Sequelize.Op;
-    return queryInterface.bulkDelete(options, {
-      username: { [Op.in]: ["ggnore", "Yoshinoya", "thegrumpyman"] },
-    });
+    return queryInterface.bulkDelete(options);
   },
 };

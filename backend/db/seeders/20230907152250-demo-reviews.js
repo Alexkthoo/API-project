@@ -17,13 +17,13 @@ module.exports = {
           spotId: 1,
           userId: 1,
           review: "Beautiful Park",
-          stars: 5,
+          stars: 4,
         },
         {
           spotId: 2,
           userId: 2,
           review: "LA sucks",
-          stars: 3,
+          stars: 2,
         },
         {
           spotId: 3,
@@ -36,13 +36,19 @@ module.exports = {
     );
   },
 
+  //   async down(queryInterface, Sequelize) {
+  //     options.tableName = "Reviews";
+  //     const Op = Sequelize.Op;
+  //     return queryInterface.bulkDelete(options, {
+  //       spotId: {
+  //         [Op.in]: [1, 2, 3],
+  //       },
+  //     });
+  //   },
+  // };
+
   async down(queryInterface, Sequelize) {
     options.tableName = "Reviews";
-    const Op = Sequelize.Op;
-    return queryInterface.bulkDelete(options, {
-      spotId: {
-        [Op.in]: [1, 2, 3],
-      },
-    });
+    return queryInterface.bulkDelete(options);
   },
 };
