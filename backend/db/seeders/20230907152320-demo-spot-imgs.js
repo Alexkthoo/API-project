@@ -12,7 +12,6 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     options.tableName = "SpotImages";
     await SpotImage.bulkCreate(
-      options,
       [
         {
           spotId: 1,
