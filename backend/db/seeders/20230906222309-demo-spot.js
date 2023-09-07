@@ -2,6 +2,7 @@
 const { Spot } = require("../models");
 
 let options = {};
+options.tableName = "Spots";
 if (process.env.NODE_ENV === "production") {
   options.schema = process.env.SCHEMA; // define your schema in options object
 }
@@ -9,7 +10,6 @@ if (process.env.NODE_ENV === "production") {
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    options.tableName = "Spots";
     await Spot.bulkCreate(
       [
         {
@@ -57,7 +57,6 @@ module.exports = {
     options.tableName = "Spots";
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete(
-      options,
       {
         name: {
           [Op.in]: ["Kit Kat", "Nike", "Mario"],

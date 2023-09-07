@@ -1,13 +1,14 @@
 "use strict";
 
 let options = {};
+options.tableName = "Spots";
 if (process.env.NODE_ENV === "production") {
   options.schema = process.env.SCHEMA; // define your schema in options object
 }
 
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    options.tableName = "Spots";
     await queryInterface.createTable(
       "Spots",
       {
@@ -19,36 +20,46 @@ module.exports = {
         },
         ownerId: {
           type: Sequelize.INTEGER,
+          allowNull: false,
           references: { model: "Users" },
           onDelete: "CASCADE",
           hooks: true,
         },
         address: {
           type: Sequelize.STRING,
+          allowNull: false,
         },
         city: {
           type: Sequelize.STRING,
+          allowNull: false,
         },
         state: {
           type: Sequelize.STRING,
+          allowNull: false,
         },
         country: {
           type: Sequelize.STRING,
+          allowNull: false,
         },
         lat: {
           type: Sequelize.DECIMAL,
+          allowNull: false,
         },
         lng: {
           type: Sequelize.DECIMAL,
+          allowNull: false,
         },
         name: {
           type: Sequelize.STRING,
+          allowNull: false,
         },
         description: {
           type: Sequelize.STRING,
+          allowNull: false,
         },
         price: {
           type: Sequelize.DECIMAL,
+          allowNull: false,
         },
         createdAt: {
           allowNull: false,
@@ -65,7 +76,6 @@ module.exports = {
     );
   },
   async down(queryInterface, Sequelize) {
-    options.tableName = "Spots";
-    await queryInterface.dropTable("Spots");
+    await queryInterface.dropTable(options);
   },
 };

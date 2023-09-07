@@ -1,13 +1,14 @@
 "use strict";
 
 let options = {};
+options.tableName = "Bookings";
 if (process.env.NODE_ENV === "production") {
   options.schema = process.env.SCHEMA; // define your schema in options object
 }
 
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    options.tableName = "Bookings";
     await queryInterface.createTable(
       "Bookings",
       {
@@ -30,10 +31,12 @@ module.exports = {
           hooks: true,
         },
         startDate: {
-          type: Sequelize.DATEONLY,
+          type: Sequelize.DATE,
+          allowNull: false,
         },
         endDate: {
-          type: Sequelize.DATEONLY,
+          type: Sequelize.DATE,
+          allowNull: false,
         },
         createdAt: {
           allowNull: false,
@@ -50,7 +53,6 @@ module.exports = {
     );
   },
   async down(queryInterface, Sequelize) {
-    options.tableName = "Bookings";
-    await queryInterface.dropTable("Bookings");
+    await queryInterface.dropTable(options);
   },
 };
