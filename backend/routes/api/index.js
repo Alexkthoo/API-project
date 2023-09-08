@@ -28,10 +28,6 @@ router.post("/test", (req, res) => {
   res.json({ requestBody: req.body });
 });
 
-router.post("/test", (req, res) => {
-  res.json({ requestBody: req.body });
-});
-
 // // GET /api/restore-user
 // router.get("/restore-user", (req, res) => {
 //   return res.json(req.user);
