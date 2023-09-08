@@ -150,7 +150,14 @@ router.get("/", validateQuery, async (req, res) => {
   }
 
   const spots = await Spot.findAll({
-    include: [{ model: Review }, { model: SpotImage }],
+    include: [
+      {
+        model: Review,
+      },
+      {
+        model: SpotImage,
+      },
+    ],
     where,
     ...pagination,
   });
