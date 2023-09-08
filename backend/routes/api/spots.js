@@ -80,6 +80,146 @@ const validateQuery = [
   handleValidationErrors,
 ];
 
+//add an image to a spot based on the spot's id
+router.post("/:spotId/images", requireAuth, async (req, res) => {
+  const { user } = req;
+
+  const spotId = req.params.spotId;
+  const spot = await Spot.findByPk(spotId);
+
+  if (spot) {
+    if (user.id === spot.ownerId) {
+      const { url, preview } = req.body;
+
+      const newSpotImage = await SpotImage.create({
+        spotId,
+        url,
+        preview,
+      });
+
+      return res.status(201).json({
+        id: newSpotImage.id,
+        preview: newSpotImage.preview,
+        url: newSpotImage.url,
+      });
+    } else {
+      return res.status(403).json({
+        message: "You don't have permission to add an image to this spot",
+      });
+    }
+  } else {
+    return res.status(404).json({ message: "Spot couldn't be found" });
+  }
+});
+
+//get details of a spot from an id
+router.get("/:spotId", async (req, res) => {
+  const spotId = req.params.spotId;
+
+  const spot = await Spot.findByPk(spotId, {
+    include: [
+      {
+        model: User,
+        attributes: ["id", "firstName", "lastName"],
+      },
+      {
+        model: SpotImage,
+        as: "SpotImages",
+        attributes: ["id", "url", "preview"],
+      },
+      {
+        model: Review,
+        attributes: ["stars"],
+      },
+    ],
+  });
+
+  if (!spot) {
+    return res.status(404).json({ message: "Spot couldn't be found" });
+  }
+
+  const numReviews = spot.Reviews.length;
+  const totalStars = spot.Reviews.reduce(
+    (total, review) => total + review.stars,
+    0
+  );
+  let avgStarRating = 0;
+
+  if (numReviews > 0) {
+    avgStarRating = totalStars / numReviews;
+  }
+
+  return res.status(200).json({
+    id: spot.id,
+    ownerId: spot.ownerId,
+    address: spot.address,
+    city: spot.city,
+    state: spot.state,
+    country: spot.country,
+    lat: spot.lat,
+    lng: spot.lng,
+    name: spot.name,
+    description: spot.description,
+    price: spot.price,
+    createdAt: spot.createdAt,
+    updatedAt: spot.updatedAt,
+    numReviews: numReviews,
+    avgRating: avgStarRating,
+    SpotImages: spot.SpotImages,
+    Owner: spot.User,
+  });
+});
+
+//Get all Spots owned by the Current User
+router.get("/current", requireAuth, async (req, res) => {
+  const userId = req.user.id;
+  const spots = await Spot.findAll({
+    where: { ownerId: userId },
+    include: [{ model: Review }, { model: SpotImage }],
+  });
+
+  const spotsArray = spots.map((spot) => {
+    const newSpot = spot.toJSON();
+
+    newSpot.SpotImages.forEach((image) => {
+      if (image.preview === true) {
+        newSpot.previewImage = image.url;
+      }
+    });
+
+    if (!newSpot.previewImage) {
+      newSpot.previewImage = "no preview image";
+    }
+
+    delete newSpot.SpotImages;
+
+    if (newSpot.Reviews) {
+      let sum = 0;
+      let count = 0;
+      newSpot.Reviews.forEach((review) => {
+        if (review) {
+          sum += review.stars;
+          count++;
+        }
+      });
+
+      if (count > 0) {
+        newSpot.avgRating = sum / count;
+      } else {
+        newSpot.avgRating = 0;
+      }
+
+      delete newSpot.Reviews;
+    } else {
+      newSpot.avgRating = 0;
+    }
+
+    return newSpot;
+  });
+
+  return res.status(200).json({ Spots: spotsArray });
+});
+
 //get all spots with query filters
 router.get("/", validateQuery, async (req, res) => {
   let { page, size, minLat, maxLat, minLng, maxLng, minPrice, maxPrice } =
@@ -168,114 +308,6 @@ router.get("/", validateQuery, async (req, res) => {
   displayResult.size = parseInt(size);
 
   return res.status(200).json(displayResult);
-});
-
-//Get all Spots owned by the Current User
-router.get("/current", requireAuth, async (req, res) => {
-  const userId = req.user.id;
-  const spots = await Spot.findAll({
-    where: { ownerId: userId },
-    include: [{ model: Review }, { model: SpotImage }],
-  });
-
-  const spotsArray = spots.map((spot) => {
-    const newSpot = spot.toJSON();
-
-    newSpot.SpotImages.forEach((image) => {
-      if (image.preview === true) {
-        newSpot.previewImage = image.url;
-      }
-    });
-
-    if (!newSpot.previewImage) {
-      newSpot.previewImage = "no preview image";
-    }
-
-    delete newSpot.SpotImages;
-
-    if (newSpot.Reviews) {
-      let sum = 0;
-      let count = 0;
-      newSpot.Reviews.forEach((review) => {
-        if (review) {
-          sum += review.stars;
-          count++;
-        }
-      });
-
-      if (count > 0) {
-        newSpot.avgRating = sum / count;
-      } else {
-        newSpot.avgRating = 0;
-      }
-
-      delete newSpot.Reviews;
-    } else {
-      newSpot.avgRating = 0;
-    }
-
-    return newSpot;
-  });
-
-  return res.status(200).json({ Spots: spotsArray });
-});
-
-//get details of a spot from an id
-router.get("/:spotId", async (req, res) => {
-  const spotId = req.params.spotId;
-
-  const spot = await Spot.findByPk(spotId, {
-    include: [
-      {
-        model: User,
-        attributes: ["id", "firstName", "lastName"],
-      },
-      {
-        model: SpotImage,
-        as: "SpotImages",
-        attributes: ["id", "url", "preview"],
-      },
-      {
-        model: Review,
-        attributes: ["stars"],
-      },
-    ],
-  });
-
-  if (!spot) {
-    return res.status(404).json({ message: "Spot couldn't be found" });
-  }
-
-  const numReviews = spot.Reviews.length;
-  const totalStars = spot.Reviews.reduce(
-    (total, review) => total + review.stars,
-    0
-  );
-  let avgStarRating = 0;
-
-  if (numReviews > 0) {
-    avgStarRating = totalStars / numReviews;
-  }
-
-  return res.status(200).json({
-    id: spot.id,
-    ownerId: spot.ownerId,
-    address: spot.address,
-    city: spot.city,
-    state: spot.state,
-    country: spot.country,
-    lat: spot.lat,
-    lng: spot.lng,
-    name: spot.name,
-    description: spot.description,
-    price: spot.price,
-    createdAt: spot.createdAt,
-    updatedAt: spot.updatedAt,
-    numReviews: numReviews,
-    avgRating: avgStarRating,
-    SpotImages: spot.SpotImages,
-    Owner: spot.User,
-  });
 });
 
 router.post("/", requireAuth, validateNewSpot, async (req, res) => {
