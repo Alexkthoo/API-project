@@ -81,8 +81,7 @@ const validateQuery = [
 ];
 
 //create a spot
-router.post("/", requireAuth, validateNewSpot, async (req, res) => {
-  //do this when authentication needs to be true
+router.post("/", requireAuth, validateCreateSpot, async (req, res) => {
   try {
     const {
       address,
@@ -400,55 +399,35 @@ router.post("/:spotId/images", requireAuth, async (req, res) => {
         message: "You don't have permission to add an image to this spot",
       });
     }
-
-    delete newSpot.SpotImages;
-
-    return newSpot;
-  });
-
-  // console.log(spotsArray);
-
-  let displayResult = { Spots: spotsArray };
-
-  if (page === 0) displayResult.page = 1;
-  else displayResult.page = parseInt(page);
-
-  displayResult.size = parseInt(size);
-
-  return res.status(200).json(displayResult);
+  } else {
+    return res.status(404).json({ message: "Spot couldn't be found" });
+  }
 });
 
-router.post("/", requireAuth, validateNewSpot, async (req, res) => {
-  //do this when authentication needs to be true
-  try {
-    const {
-      address,
-      city,
-      state,
-      country,
-      lat,
-      lng,
-      name,
-      description,
-      price,
-    } = req.body;
+// Get all Reviews by a Spot's id
+router.get("/:spotId/reviews", async (req, res) => {
+  const spotId = req.params.spotId;
 
-    const newSpot = await Spot.create({
-      ownerId: req.user.id,
-      address,
-      city,
-      state,
-      country,
-      lat,
-      lng,
-      name,
-      description,
-      price,
+  const spot = await Spot.findByPk(spotId);
+
+  if (spot) {
+    const reviews = await Review.findAll({
+      where: { spotId },
+      include: [
+        {
+          model: User,
+          attributes: ["id", "firstName", "lastName"],
+        },
+        {
+          model: ReviewImage,
+          attributes: ["id", "url"],
+        },
+      ],
     });
-    res.status(201).json(newSpot);
-  } catch (error) {
-    console.error("Error creating new spot:", error);
-    res.status(500).json({ message: "Internal Server Error" });
+
+    return res.status(200).json({ Reviews: reviews });
+  } else {
+    return res.status(404).json({ message: "Spot couldn't be found" });
   }
 });
 

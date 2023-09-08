@@ -24,9 +24,10 @@ const validateNewReview = [
 
 // Get all reviews of current user
 router.get("/current", requireAuth, async (req, res) => {
-  reviews = await Review.findAll({
+  let user = await User.findByPk(req.user.id);
+  let reviews = await Review.findAll({
     where: {
-      userId: req.user.id,
+      userId: user.id,
     },
     include: [
       {
@@ -35,9 +36,19 @@ router.get("/current", requireAuth, async (req, res) => {
       },
       {
         model: Spot,
-        attributes: {
-          exclude: ["createdAt", "updatedAt"],
-        },
+        include: [{ model: SpotImage }],
+        attributes: [
+          "id",
+          "ownerId",
+          "address",
+          "city",
+          "state",
+          "country",
+          "lat",
+          "lng",
+          "name",
+          "price",
+        ],
       },
       {
         model: ReviewImage,
@@ -46,7 +57,21 @@ router.get("/current", requireAuth, async (req, res) => {
     ],
   });
 
-  return res.json({ Reviews: reviews });
+  let reviewsList = [];
+  reviews.forEach((review) => {
+    reviewsList.push(review.toJSON());
+  });
+
+  reviewsList.forEach((review) => {
+    review.Spot.SpotImages.forEach((image) => {
+      if (image.preview === true) {
+        review.Spot.previewImage = image.url;
+      }
+    });
+    delete review.Spot.SpotImages;
+  });
+
+  res.json({ Reviews: reviewsList });
 });
 
 module.exports = router;
