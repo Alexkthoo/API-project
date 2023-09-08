@@ -15,15 +15,15 @@ module.exports = {
       [
         {
           spotId: 1,
-          url: "pic1",
+          url: "pic1.com",
         },
         {
           spotId: 2,
-          url: "pic2",
+          url: "pic2.com",
         },
         {
           spotId: 3,
-          url: "pic3",
+          url: "pic3.com",
         },
       ],
       { validate: true }
