@@ -26,11 +26,9 @@ const validateNewSpot = [
     .exists({ checkFalsy: true })
     .withMessage("Country is required"),
   check("lat")
-    .optional()
     .isFloat({ min: -90, max: 90 })
     .withMessage("Latitude is not valid"),
   check("lng")
-    .optional()
     .isFloat({ min: -180, max: 180 })
     .withMessage("Longitude is not valid"),
   check("name")
@@ -222,4 +220,95 @@ router.get("/current", requireAuth, async (req, res) => {
   return res.status(200).json({ Spots: spotsArray });
 });
 
+//get details of a spot from an id
+router.get("/:spotId", async (req, res) => {
+  const spotId = req.params.spotId;
+
+  const spot = await Spot.findByPk(spotId, {
+    include: [
+      {
+        model: User,
+        attributes: ["id", "firstName", "lastName"],
+      },
+      {
+        model: SpotImage,
+        as: "SpotImages",
+        attributes: ["id", "url", "preview"],
+      },
+      {
+        model: Review,
+        attributes: ["stars"],
+      },
+    ],
+  });
+
+  if (!spot) {
+    return res.status(404).json({ message: "Spot couldn't be found" });
+  }
+
+  const numReviews = spot.Reviews.length;
+  const totalStars = spot.Reviews.reduce(
+    (total, review) => total + review.stars,
+    0
+  );
+  let avgStarRating = 0;
+
+  if (numReviews > 0) {
+    avgStarRating = totalStars / numReviews;
+  }
+
+  return res.status(200).json({
+    id: spot.id,
+    ownerId: spot.ownerId,
+    address: spot.address,
+    city: spot.city,
+    state: spot.state,
+    country: spot.country,
+    lat: spot.lat,
+    lng: spot.lng,
+    name: spot.name,
+    description: spot.description,
+    price: spot.price,
+    createdAt: spot.createdAt,
+    updatedAt: spot.updatedAt,
+    numReviews: numReviews,
+    avgRating: avgStarRating,
+    SpotImages: spot.SpotImages,
+    Owner: spot.User,
+  });
+});
+
+router.post("/", requireAuth, validateNewSpot, async (req, res) => {
+  //do this when authentication needs to be true
+  try {
+    const {
+      address,
+      city,
+      state,
+      country,
+      lat,
+      lng,
+      name,
+      description,
+      price,
+    } = req.body;
+
+    const newSpot = await Spot.create({
+      ownerId: req.user.id,
+      address,
+      city,
+      state,
+      country,
+      lat,
+      lng,
+      name,
+      description,
+      price,
+    });
+    res.status(201).json(newSpot);
+  } catch (error) {
+    console.error("Error creating new spot:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
 module.exports = router;

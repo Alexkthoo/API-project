@@ -49,12 +49,20 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       lat: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.FLOAT,
         allowNull: false,
+        validate: {
+          min: -90,
+          max: 90,
+        },
       },
       lng: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.FLOAT,
         allowNull: false,
+        validate: {
+          min: -180,
+          max: 180,
+        },
       },
       name: {
         type: DataTypes.STRING,

@@ -16,14 +16,17 @@ module.exports = {
         {
           spotId: 1,
           url: "pic1.com",
+          preview: true,
         },
         {
           spotId: 2,
           url: "pic2.com",
+          preview: true,
         },
         {
           spotId: 3,
           url: "pic3.com",
+          preview: false,
         },
       ],
       { validate: true }
