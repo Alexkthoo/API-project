@@ -54,6 +54,7 @@ router.get("/current", requireAuth, async (req, res) => {
   res.json({ Bookings: bookingsList });
 });
 
+// edit a booking
 router.put("/:bookingId", requireAuth, async (req, res) => {
   const booking = await Booking.findByPk(req.params.bookingId);
   const user = await User.findByPk(req.user.id);

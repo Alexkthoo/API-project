@@ -82,7 +82,7 @@ const validateQuery = [
   handleValidationErrors,
 ];
 
-//create a review for a spot validator
+// review spot validator
 const validateNewReview = [
   check("review").notEmpty().withMessage("Review text is required"),
   check("stars")

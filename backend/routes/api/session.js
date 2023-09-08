@@ -20,8 +20,20 @@ const validateLogin = [
 
 const router = express.Router();
 // Log in
-// Log in
 router.post("/", validateLogin, async (req, res, next) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const validationErrors = errors.array().reduce((acc, error) => {
+      acc[error.param] = error.msg;
+      return acc;
+    }, {});
+    return res.status(400).json({
+      message: "Bad Request",
+      errors: validationErrors,
+    });
+  }
+
   const { credential, password } = req.body;
 
   const user = await User.unscoped().findOne({
@@ -34,14 +46,17 @@ router.post("/", validateLogin, async (req, res, next) => {
   });
 
   if (!user || !bcrypt.compareSync(password, user.hashedPassword.toString())) {
-    // Return the error response directly to the client
-    return res.status(401).json({ message: "Invalid credentials" });
+    const err = new Error("Login failed");
+    err.status = 401;
+    err.title = "Login failed";
+    err.errors = { credential: "Invalid credentials" };
+    return next(err);
   }
 
   const safeUser = {
-    id: user.id,
     firstName: user.firstName,
     lastName: user.lastName,
+    id: user.id,
     email: user.email,
     username: user.username,
   };

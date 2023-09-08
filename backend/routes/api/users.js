@@ -33,21 +33,34 @@ const validateSignup = [
 router.post("", validateSignup, async (req, res) => {
   const { firstName, lastName, email, password, username } = req.body;
 
-  const existingEmail = await User.findOne({ where: { email } });
-  if (existingEmail) {
-    // Email is not unique, send a custom error message
-    return res.status(500).json({
-      message: "User already exists",
-      errors: { email: "User with that email already exists" },
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      message: "Bad Request",
+      errors: errors.array().reduce((acc, error) => {
+        acc[error.param] = error.msg;
+        return acc;
+      }, {}),
     });
   }
 
-  const existingUser = await User.findOne({ where: { username } });
-  if (existingUser) {
-    // username is not unique, send a custom error message
+  const existingEmail = await User.findOne({ where: { email } });
+  if (existingEmail) {
     return res.status(500).json({
       message: "User already exists",
-      errors: { username: "User with that username already exists" },
+      errors: {
+        email: "User with that email already exists",
+      },
+    });
+  }
+
+  const existingUsername = await User.findOne({ where: { username } });
+  if (existingUsername) {
+    return res.status(500).json({
+      message: "User already exists",
+      errors: {
+        username: "User with that username already exists",
+      },
     });
   }
 
