@@ -16,7 +16,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 const router = express.Router();
 
 //create spot validator
-const validateNewSpot = [
+const validateCreateSpot = [
   check("address")
     .exists({ checkFalsy: true })
     .withMessage("Street address is required"),
@@ -260,6 +260,27 @@ router.get("/current", requireAuth, async (req, res) => {
   return res.status(200).json({ Spots: spotsArray });
 });
 
+//delete a spot
+router.delete("/:spotId", requireAuth, async (req, res) => {
+  const spotId = req.params.spotId;
+  const userId = req.user.id;
+
+  const spot = await Spot.findOne({
+    where: {
+      id: spotId,
+      ownerId: userId,
+    },
+  });
+
+  if (spot) {
+    await spot.destroy();
+
+    return res.status(200).json({ message: "Successfully deleted" });
+  } else {
+    return res.status(404).json({ message: "Spot couldn't be found" });
+  }
+});
+
 //get details of a spot from an id
 router.get("/:spotId", async (req, res) => {
   const spotId = req.params.spotId;
@@ -318,6 +339,40 @@ router.get("/:spotId", async (req, res) => {
   });
 });
 
+// Edit a spot
+router.put("/:spotId", requireAuth, validateCreateSpot, async (req, res) => {
+  const spotId = req.params.spotId;
+  const userId = req.user.id;
+
+  const spot = await Spot.findOne({
+    where: {
+      id: spotId,
+      ownerId: userId,
+    },
+  });
+
+  if (!spot) {
+    return res.status(404).json({ message: "Spot couldn't be found" });
+  }
+
+  const { address, city, state, country, lat, lng, name, description, price } =
+    req.body;
+
+  await spot.update({
+    address,
+    city,
+    state,
+    country,
+    lat,
+    lng,
+    name,
+    description,
+    price,
+  });
+
+  return res.status(200).json(spot);
+});
+
 //add an image to a spot based on the spot's id
 router.post("/:spotId/images", requireAuth, async (req, res) => {
   const { user } = req;
@@ -345,8 +400,55 @@ router.post("/:spotId/images", requireAuth, async (req, res) => {
         message: "You don't have permission to add an image to this spot",
       });
     }
-  } else {
-    return res.status(404).json({ message: "Spot couldn't be found" });
+
+    delete newSpot.SpotImages;
+
+    return newSpot;
+  });
+
+  // console.log(spotsArray);
+
+  let displayResult = { Spots: spotsArray };
+
+  if (page === 0) displayResult.page = 1;
+  else displayResult.page = parseInt(page);
+
+  displayResult.size = parseInt(size);
+
+  return res.status(200).json(displayResult);
+});
+
+router.post("/", requireAuth, validateNewSpot, async (req, res) => {
+  //do this when authentication needs to be true
+  try {
+    const {
+      address,
+      city,
+      state,
+      country,
+      lat,
+      lng,
+      name,
+      description,
+      price,
+    } = req.body;
+
+    const newSpot = await Spot.create({
+      ownerId: req.user.id,
+      address,
+      city,
+      state,
+      country,
+      lat,
+      lng,
+      name,
+      description,
+      price,
+    });
+    res.status(201).json(newSpot);
+  } catch (error) {
+    console.error("Error creating new spot:", error);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
 
