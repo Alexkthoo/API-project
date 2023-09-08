@@ -6,6 +6,7 @@ const {
   Spot,
   ReviewImage,
   SpotImage,
+  Booking,
 } = require("../../db/models");
 const { check, validationResult } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
@@ -74,7 +75,7 @@ router.get("/current", requireAuth, async (req, res) => {
   res.json({ Reviews: reviewsList });
 });
 
-//edit a review //
+//edit a review
 router.put("/:reviewsId", validateReview, requireAuth, async (req, res) => {
   const editReview = await Review.findByPk(req.params.reviewsId);
   const user = await User.findByPk(req.user.id);
@@ -94,6 +95,51 @@ router.put("/:reviewsId", validateReview, requireAuth, async (req, res) => {
     res.status(404).json({ message: "Review couldn't be found" });
   }
   res.json(editReview);
+});
+
+// Delete a Review
+router.delete("/:reviewId", requireAuth, async (req, res) => {
+  const review = await Review.findByPk(req.params.reviewId);
+  const user = await User.findByPk(req.user.id);
+
+  if (!review) {
+    res.status(404);
+    return res.json({
+      message: "Review couldn't be found",
+    });
+  }
+
+  if (review.userId !== user.id) {
+    res.status(403);
+    return res.json({
+      message: "Review must belong to the current user",
+    });
+  }
+
+  await review.destroy();
+
+  res.json({ message: "Successfully deleted" });
+});
+
+//delete a review
+router.delete("/:reviewId", requireAuth, async (req, res) => {
+  const reviewId = req.params.reviewId;
+  const userId = req.user.id;
+
+  const review = await Review.findOne({
+    where: {
+      id: reviewId,
+      userId: userId,
+    },
+  });
+
+  if (review) {
+    await review.destroy();
+
+    return res.status(200).json({ message: "Successfully deleted" });
+  } else {
+    return res.status(404).json({ message: "Review couldn't be found" });
+  }
 });
 
 // Add an Image to a Review based on the Review's id
