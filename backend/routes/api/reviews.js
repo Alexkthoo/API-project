@@ -11,7 +11,7 @@ const { check, validationResult } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
 const router = express.Router();
 
-const validateNewReview = [
+const validateReview = [
   check("review")
     .exists({ checkFalsy: true })
     .withMessage("Review text is required"),
@@ -72,6 +72,71 @@ router.get("/current", requireAuth, async (req, res) => {
   });
 
   res.json({ Reviews: reviewsList });
+});
+
+//edit a review //
+router.put("/:reviewsId", validateReview, requireAuth, async (req, res) => {
+  const editReview = await Review.findByPk(req.params.reviewsId);
+  const user = await User.findByPk(req.user.id);
+
+  if (editReview) {
+    if (editReview.userId === user.id) {
+      const { review, stars } = req.body;
+
+      await editReview.update({
+        review,
+        stars,
+      });
+    } else {
+      res.status(403).json({ message: "Reviews must belong to current user" });
+    }
+  } else {
+    res.status(404).json({ message: "Review couldn't be found" });
+  }
+  res.json(editReview);
+});
+
+// Add an Image to a Review based on the Review's id
+router.post("/:reviewId/images", requireAuth, async (req, res) => {
+  const { user } = req;
+  const { url } = req.body;
+
+  let review = await Review.findByPk(req.params.reviewId, {
+    include: ReviewImage,
+  });
+
+  if (!review) {
+    res.status(404);
+    return res.json({ message: "Review couldn't be found" });
+  }
+
+  if (user.id === review.userId && review.ReviewImages.length < 10) {
+    const image = await review.createReviewImage({
+      url: url,
+      reviewId: req.params.reviewId,
+    });
+
+    if (user.id !== review.userId) {
+      res.status(403);
+      return res.json({
+        message: "Only author of this review can add a new image",
+      });
+    }
+
+    await image.save();
+
+    let response = {};
+    response.id = image.id;
+    response.url = image.url;
+
+    res.status(200);
+    res.json(response);
+  } else if (review.ReviewImages.length >= 10) {
+    res.status(403);
+    return res.json({
+      message: "Maximum number of images for this resource was reached",
+    });
+  }
 });
 
 module.exports = router;
