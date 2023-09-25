@@ -24,6 +24,9 @@ function LoginFormModal() {
       });
   };
 
+  // disable login if username is less than 4 char and password is less than 6 char
+  const disableLogIn = credential.length < 4 || password.length < 6;
+
   return (
     <>
       <h1>Log In</h1>
@@ -47,7 +50,9 @@ function LoginFormModal() {
           />
         </label>
         {errors.credential && <p>{errors.credential}</p>}
-        <button type="submit">Log In</button>
+        <button type="submit" disabled={disableLogIn}>
+          Log In
+        </button>
       </form>
     </>
   );
