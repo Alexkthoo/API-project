@@ -5,6 +5,7 @@ import * as sessionActions from "../../store/session";
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
+import "./ProfileButton.css";
 
 // showMenu controls the display of the dropdown menu
 
@@ -44,8 +45,13 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fa-solid fa-user" />
+      <button
+        onClick={openMenu}
+        id="profile-button"
+        style={{ cursor: "pointer" }}
+      >
+        <i className="fa-solid fa-bars" style={{ fontSize: "20px" }}></i>
+        <i className="fas fa-user-circle" style={{ fontSize: "20px" }} />
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (

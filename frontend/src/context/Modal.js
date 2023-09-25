@@ -1,15 +1,20 @@
+// frontend/src/context/Modal.js
 import React, { useRef, useState, useContext } from "react";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 
 const ModalContext = React.createContext();
 
+// 2 states: modalContent & onModalClose
+
 export function ModalProvider({ children }) {
   const modalRef = useRef();
   const [modalContent, setModalContent] = useState(null);
+
   // callback function that will be called when modal is closing
   const [onModalClose, setOnModalClose] = useState(null);
 
+  // function that triggers the modal to be closed
   const closeModal = () => {
     setModalContent(null); // clear the modal contents
     // If callback function is truthy, call the callback function and reset it
