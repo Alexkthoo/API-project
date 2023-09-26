@@ -16,25 +16,26 @@ module.exports = {
       [
         {
           ownerId: 1,
-          address: "123 Main St",
-          city: "New York",
+          address: "200 Park Avenue",
+          city: "Manhattan",
           state: "New York",
           country: "USA",
           lat: 40.71284123123,
           lng: -74.006123123,
-          name: "Central Park",
-          description: "A beautiful park in the heart of New York City",
+          name: "Stark Tower",
+          description:
+            "Tony Stark bought out the 59-story skyscraper and reconfigured it to run sole off of his J.A.R.V.I.S technology.",
           price: 10.99,
         },
         {
           ownerId: 2,
-          address: "456 Elm St",
-          city: "Los Angeles",
+          address: "10880 Malibu Point",
+          city: "Malibu",
           state: "California",
           country: "USA",
           lat: 34.0522,
           lng: -118.2437,
-          name: "Hollywood Walk of Fame",
+          name: "Tony Stark's house",
           description:
             "Famous sidewalk featuring stars dedicated to celebrities",
           price: 15.99,

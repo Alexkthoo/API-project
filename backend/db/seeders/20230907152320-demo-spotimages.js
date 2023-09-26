@@ -15,18 +15,18 @@ module.exports = {
       [
         {
           spotId: 1,
-          url: "pic1.com",
+          url: "https://a.cdn-hotels.com/gdcs/production116/d1103/0ffba831-3af6-4ec5-918b-edd67a21480e.jpg",
           preview: true,
         },
         {
           spotId: 2,
-          url: "pic2.com",
+          url: "https://www.home-designing.com/wp-content/uploads/2010/05/ironman_stark_house_aerial_art.jpg",
           preview: true,
         },
         {
           spotId: 3,
-          url: "pic3.com",
-          preview: false,
+          url: "https://customizeminifiguresintelligence.files.wordpress.com/2020/06/panlos613001_004.jpg?w=723",
+          preview: true,
         },
       ],
       { validate: true }
