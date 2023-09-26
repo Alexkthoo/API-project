@@ -20,6 +20,23 @@ function LoginFormModal() {
         const data = await res.json();
         if (data && data.errors) {
           setErrors(data.errors);
+          console.log(errors.credential);
+        }
+      });
+  };
+
+  const handleLogInDemo = (e) => {
+    e.preventDefault();
+    const demoCred = "ggnore";
+    const demoPassword = "password";
+    return dispatch(
+      sessionActions.login({ credential: demoCred, password: demoPassword })
+    )
+      .then(closeModal)
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) {
+          setErrors(data.errors);
         }
       });
   };
@@ -28,18 +45,22 @@ function LoginFormModal() {
   const disableLogIn = credential.length < 4 || password.length < 6;
 
   return (
+    // login
     <>
       <h1>Log In</h1>
+      <label>Username or Email</label>
       <form onSubmit={handleSubmit}>
         <label>
-          Username or Email
           <input
+            className="modal-bars"
+            placeholder="Username or Email"
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
             required
           />
         </label>
+
         <label>
           Password
           <input
@@ -49,11 +70,16 @@ function LoginFormModal() {
             required
           />
         </label>
-        {errors.credential && <p>{errors.credential}</p>}
-        <button type="submit" disabled={disableLogIn}>
+        {errors.credential && (
+          <p className="error-message">{errors.credential}</p>
+        )}
+        <button className="login-button" type="submit" disabled={disableLogIn}>
           Log In
         </button>
       </form>
+      <button id="demo-button" onClick={handleLogInDemo}>
+        Log in as Demo User
+      </button>
     </>
   );
 }
