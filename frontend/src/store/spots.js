@@ -4,6 +4,8 @@ import { csrfFetch } from "./csrf";
 const GET_ALL_SPOTS = "spot/getAllSpots"; // snakeCase for "spot/getAllSpots"
 
 // action
+
+// get all spots for landing page.
 const getAllSpots = (spots) => {
   return {
     type: GET_ALL_SPOTS,
@@ -12,6 +14,8 @@ const getAllSpots = (spots) => {
 };
 
 //thunks
+
+//get all spots on landing page
 export const getAllSpotsThunk = () => async (dispatch) => {
   const res = await csrfFetch("/api/spots");
 
@@ -19,6 +23,7 @@ export const getAllSpotsThunk = () => async (dispatch) => {
     let spots = await res.json();
     spots = spots.Spots;
     dispatch(getAllSpots(spots));
+    // console.log("🚀 ~ file: spots.js:23 ~ getAllSpotsThunk ~ spots:", spots);
     return spots;
   }
 };
@@ -34,6 +39,7 @@ const spotReducer = (state = initialState, action) => {
       action.spots.forEach((spot) => (allSpots[spot.id] = spot));
       return { allSpots: { ...allSpots } };
     }
+
     default:
       return state;
   }

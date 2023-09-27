@@ -15,7 +15,7 @@ module.exports = {
       [
         {
           spotId: 1,
-          url: "https://a.cdn-hotels.com/gdcs/production116/d1103/0ffba831-3af6-4ec5-918b-edd67a21480e.jpg",
+          url: "https://mculocationscout.files.wordpress.com/2021/01/avengers_044-starktower.jpg?w=1200",
           preview: true,
         },
         {
