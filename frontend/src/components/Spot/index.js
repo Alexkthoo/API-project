@@ -7,7 +7,7 @@ import "./Spot.css";
 const Spots = () => {
   const dispatch = useDispatch();
   const spots = useSelector((state) => state.spots);
-  console.log("🚀~ file: index.js:10 ~ Spots ~ spots:", spots);
+  // console.log("🚀~ file: index.js:10 ~ Spots ~ spots:", spots);
   const allSpots = Object.values(spots.allSpots);
 
   useEffect(() => {
