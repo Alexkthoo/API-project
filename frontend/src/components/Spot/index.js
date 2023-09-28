@@ -7,6 +7,7 @@ import "./Spot.css";
 const Spots = () => {
   const dispatch = useDispatch();
   const spots = useSelector((state) => state.spots);
+  console.log("🚀~ file: index.js:10 ~ Spots ~ spots:", spots);
   const allSpots = Object.values(spots.allSpots);
 
   useEffect(() => {
@@ -16,32 +17,25 @@ const Spots = () => {
   return (
     <>
       <div className="spots-container">
-        <div className="spots-grid">
+        <div>
           {allSpots.map((spot) => (
             <NavLink to={`/spots/${spot.id}`} key={spot.id}>
-              <div className="ind-spot">
-                <div className="tooltip">
+              <div>
+                <div>
                   <img id="spot-img" src={`${spot.previewImage}`} alt="img" />
-                  <span className="tooltiptext">{spot.name}</span>
+                  <span>{spot.name}</span>
                 </div>
                 <div className="under-img">
-                  <div className="city">
+                  <div>
                     {spot.city}, {spot.state}
                   </div>
-                  {spot.avgRating ? (
-                    <div className="review">
-                      <b>
-                        {" "}
-                        <i className="fa-solid fa-star"></i>
-                        {parseFloat(spot.avgRating).toFixed(1)}
-                      </b>
-                    </div>
-                  ) : (
-                    <div className="review">
-                      <b>New</b>
-                    </div>
-                  )}
+
+                  <div>
+                    <i className="fa-solid fa-star"></i>
+                    {spot.avgRating}
+                  </div>
                 </div>
+
                 <div className="price">
                   <b>${spot.price}</b> night
                 </div>
