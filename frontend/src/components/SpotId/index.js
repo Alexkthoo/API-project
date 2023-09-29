@@ -1,30 +1,40 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getSpotThunk } from "../../store/spots";
+import { getSpotThunk, getAllSpotsThunk } from "../../store/spots";
+import AllReviews from "./spotReview";
 
 const SpotId = () => {
   const dispatch = useDispatch();
   const { spotId } = useParams();
   const Spot = useSelector((state) => state.spots.singleSpot);
+  const reviewObj = useSelector((state) => state.reviews.spot);
+  const newReview = Object.values(reviewObj);
+
+  const [loadData, setLoadData] = useState(false);
 
   useEffect(() => {
     dispatch(getSpotThunk(spotId));
+    dispatch(getAllSpotsThunk()).then(() => setLoadData(true));
   }, [dispatch, spotId]);
 
   const handleReserve = () => {
     alert("Feature Coming Soon");
   };
 
-  //spot avg rating
-  //   let avg = 0;
-  //   if (newReview.length) {
-  //     let sum = 0;
-  //     for (let i = 0; i < newReview.length; i++) {
-  //       sum += newReview[i].stars;
-  //     }
-  //     avg = sum / newReview.length;
-  //   }
+  if (!newReview || !Spot) return null;
+
+  if (!Spot.SpotImages) return null;
+
+  //   getting review avg rating
+  let avgReview = 0;
+  if (newReview.length) {
+    let sum = 0;
+    for (let i = 0; i < newReview.length; i++) {
+      sum += newReview[i].stars;
+    }
+    avgReview = sum / newReview.length;
+  }
 
   return (
     <>
@@ -34,22 +44,21 @@ const SpotId = () => {
           {Spot?.city}, {Spot?.state}, {Spot?.country}
         </p>
         <img
-          id="spot-img1"
           src={Spot?.SpotImages?.find((img) => img.preview === true)?.url}
           alt="img"
         />
-        <div className="description-host-name">
+        <div>
           <h2>
             Hosted by {Spot?.Owner?.firstName} {Spot?.Owner?.lastName}
           </h2>
           <p>{Spot?.description}</p>
         </div>
-        <div className="right-description">
-          <div className="price-star">
+        <div>
+          <div>
             <div>
               <b>${Spot?.price}</b> night
             </div>
-            <div className="inside-price-star">
+            <div>
               <i className="fa-solid fa-star"></i>
               <div></div>
 
@@ -71,8 +80,24 @@ const SpotId = () => {
           </button>
         </div>
       </div>
-      <div className="reviews-container">
-        <div className="top-reviews"></div>
+      <div>
+        <div></div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <i></i>
+          </div>
+          {Spot?.numReviews ? (
+            <div>
+              {parseFloat(avgReview)?.toFixed(1)} · {Spot.numReviews}{" "}
+              {Spot.numReviews === 1 ? "Review" : "Reviews"}
+            </div>
+          ) : (
+            <div>New</div>
+          )}
+        </div>
+        <AllReviews spotId={spotId} />
       </div>
     </>
   );

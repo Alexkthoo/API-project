@@ -1,12 +1,11 @@
 import { csrfFetch } from "./csrf";
 
 // type
-const GET_ALL_SPOTS = "spot/getAllSpots"; // snakeCase for "spot/getAllSpots"
-const GET_SPOT = "spot/getSpot";
+const GET_ALL_SPOTS = "spots/getAllSpots"; // snakeCase for "spot/getAllSpots"
+const GET_SPOT = "spots/getSpot";
 
 // action
 
-// get all spots for landing page.
 const getAllSpots = (spots) => {
   return {
     type: GET_ALL_SPOTS,
@@ -31,6 +30,7 @@ export const getAllSpotsThunk = () => async (dispatch) => {
     let spots = await res.json();
     spots = spots.Spots;
     dispatch(getAllSpots(spots));
+
     return spots;
   }
 };
