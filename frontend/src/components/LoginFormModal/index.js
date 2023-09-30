@@ -52,7 +52,6 @@ function LoginFormModal() {
       <form onSubmit={handleSubmit}>
         <label>
           <input
-            className="modal-bars"
             placeholder="Username or Email"
             type="text"
             value={credential}
@@ -70,16 +69,12 @@ function LoginFormModal() {
             required
           />
         </label>
-        {errors.credential && (
-          <p className="error-message">{errors.credential}</p>
-        )}
-        <button className="login-button" type="submit" disabled={disableLogIn}>
+        {errors.credential && <p>{errors.credential}</p>}
+        <button type="submit" disabled={disableLogIn}>
           Log In
         </button>
       </form>
-      <button id="demo-button" onClick={handleLogInDemo}>
-        Log in as Demo User
-      </button>
+      <button onClick={handleLogInDemo}>Log in as Demo User</button>
     </>
   );
 }
