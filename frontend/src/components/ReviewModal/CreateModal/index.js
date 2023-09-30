@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
 import { useModal } from "../../../context/Modal";
 import { useEffect, useState } from "react";
 import { createReviewThunk } from "../../../store/review";
@@ -11,7 +10,7 @@ const CreateModal = ({ spotId }) => {
   const oneSpot = useSelector((state) => state.spots.singleSpot);
 
   const dispatch = useDispatch();
-  const history = useHistory();
+
   const { closeModal } = useModal();
 
   const [review, setReview] = useState("");
@@ -56,7 +55,7 @@ const CreateModal = ({ spotId }) => {
 
   return (
     <>
-      <div className="create-review-modal">
+      <div>
         <h3>How was your stay?</h3>
         <form onSubmit={onSubmit}>
           <label>
@@ -71,7 +70,7 @@ const CreateModal = ({ spotId }) => {
           {validationErrors.review && submitted && (
             <p>{validationErrors.review}</p>
           )}
-          <div className="stars-review">
+          <div>
             <div
               className={
                 activeRating >= 1
@@ -82,9 +81,7 @@ const CreateModal = ({ spotId }) => {
               onClick={() => {
                 setStars(1);
               }}
-            >
-              {/* <i class="fa-sharp fa-regular fa-star"></i> */}
-            </div>
+            ></div>
             <div
               className={
                 activeRating >= 2
@@ -96,9 +93,7 @@ const CreateModal = ({ spotId }) => {
                 setStars(2);
                 setActiveRating(2);
               }}
-            >
-              {/* <i class="fa-regular fa-star"></i> */}
-            </div>
+            ></div>
             <div
               className={
                 activeRating >= 3
@@ -110,9 +105,7 @@ const CreateModal = ({ spotId }) => {
                 setStars(3);
                 setActiveRating(3);
               }}
-            >
-              {/* <i class="fa-regular fa-star"></i> */}
-            </div>
+            ></div>
             <div
               className={
                 activeRating >= 4
@@ -124,9 +117,7 @@ const CreateModal = ({ spotId }) => {
                 setStars(4);
                 setActiveRating(4);
               }}
-            >
-              {/* <i class="fa-regular fa-star"></i> */}
-            </div>
+            ></div>
             <div
               className={
                 activeRating >= 5
@@ -138,9 +129,7 @@ const CreateModal = ({ spotId }) => {
                 setStars(5);
                 setActiveRating(5);
               }}
-            >
-              {/* <i class="fa-regular fa-star"></i> */}
-            </div>
+            ></div>
             Stars
           </div>
           <button
