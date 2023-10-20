@@ -1,4 +1,4 @@
-# `NapBnb`
+# `WoWBnb`
 
 ## Database Schema Design
 

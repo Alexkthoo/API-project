@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
+import wowicon from "../../images/wow.png";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -10,11 +11,7 @@ function Navigation({ isLoaded }) {
   return (
     <div className="nav-container">
       <NavLink exact to="/">
-        <img
-          className="napbnb-icon"
-          src="https://cdn.usbrandcolors.com/images/logos/airbnb-logo.svg"
-          alt="logo"
-        ></img>
+        <img className="wowbnb-icon" src={wowicon} alt="logo-image"></img>
       </NavLink>
       {isLoaded && <ProfileButton user={sessionUser} />}
     </div>

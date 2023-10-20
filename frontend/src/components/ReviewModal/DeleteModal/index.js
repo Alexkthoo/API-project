@@ -10,13 +10,13 @@ const DeleteReviewModal = ({ spotId, reviewId }) => {
   const history = useHistory();
   const { closeModal } = useModal();
 
-  const deleteYes = () => {
+  const deleteIt = () => {
     dispatch(deleteReviewThunk(reviewId, spotId));
     history.push(`/spots/${spotId}`);
     closeModal();
   };
 
-  const deleteNo = () => {
+  const dontDelete = () => {
     closeModal();
   };
 
@@ -26,8 +26,8 @@ const DeleteReviewModal = ({ spotId, reviewId }) => {
         <h3>Confirm Delete</h3>
         <p>Are you sure you want to delete this review?</p>
         <div>
-          <button onClick={deleteYes}>Yes (Delete Review)</button>
-          <button onClick={deleteNo}>No (Keep Review)</button>
+          <button onClick={deleteIt}>Yes (Delete Review)</button>
+          <button onClick={dontDelete}>No (Keep Review)</button>
         </div>
       </div>
     </>

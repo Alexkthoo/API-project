@@ -27,10 +27,10 @@ function LoginFormModal() {
 
   const handleLogInDemo = (e) => {
     e.preventDefault();
-    const demoCred = "ggnore";
+    const demoAcc = "ggnore";
     const demoPassword = "password";
     return dispatch(
-      sessionActions.login({ credential: demoCred, password: demoPassword })
+      sessionActions.login({ credential: demoAcc, password: demoPassword })
     )
       .then(closeModal)
       .catch(async (res) => {
@@ -41,7 +41,7 @@ function LoginFormModal() {
       });
   };
 
-  // disable login if username is less than 4 char and password is less than 6 char
+  // disable login if username has less than 4 char and password less than 6 char
   const disableLogIn = credential.length < 4 || password.length < 6;
 
   return (
