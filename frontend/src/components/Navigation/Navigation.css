@@ -14,11 +14,12 @@
     /* border: 5px dotted pink; */
 }
 
-.napbnb-icon{
-  height: 75px;
-  width: 140px;
+.wowbnb-icon{
+  height: 100px;
+  width: 100px;
   cursor: pointer;
   mix-blend-mode: multiply;
+  margin-left: 25px;
 }
 
 /* #profile-button {
