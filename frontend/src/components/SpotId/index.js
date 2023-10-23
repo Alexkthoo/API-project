@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSpotThunk, getAllSpotsThunk } from "../../store/spots";
 import AllReviews from "./spotReview";
+import { getAllReviewsThunk } from "../../store/review";
 
 const SpotId = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,10 @@ const SpotId = () => {
     dispatch(getAllSpotsThunk()).then(() => setLoadData(true));
   }, [dispatch, spotId]);
 
+  useEffect(() => {
+    dispatch(getAllReviewsThunk(spotId));
+  }, [dispatch, spotId]);
+
   const handleReserve = () => {
     alert("Feature Coming Soon");
   };
@@ -26,7 +31,7 @@ const SpotId = () => {
 
   if (!Spot.SpotImages) return null;
 
-  //   getting review avg rating
+  //   getting avg review rating
   let avgReview = 0;
   if (newReview.length) {
     let sum = 0;
@@ -43,10 +48,18 @@ const SpotId = () => {
         <p>
           {Spot?.city}, {Spot?.state}, {Spot?.country}
         </p>
-        <img
-          src={Spot?.SpotImages?.find((img) => img.preview === true)?.url}
-          alt="img"
-        />
+        <div>
+          <img
+            src={Spot?.SpotImages?.find((img) => img.preview === true)?.url}
+            alt="img"
+          />
+          <div>
+            {Spot.SpotImages.filter((img, index) => index > 0).map(
+              (img, index) =>
+                index < 4 && img ? <img src={img.url} alt="img" /> : null
+            )}
+          </div>
+        </div>
         <div>
           <h2>
             Hosted by {Spot?.Owner?.firstName} {Spot?.Owner?.lastName}
