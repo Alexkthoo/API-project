@@ -5,6 +5,7 @@ const GET_ALL_SPOTS = "spots/GET_ALL_SPOTS"; // snakeCase for "spot/getAllSpots"
 const GET_SPOT = "spots/GET_SPOT";
 const CREATE_SPOT = "spots/CREATE_SPOT";
 const DELETE_SPOT = "spots/DELETE_SPOT";
+const UPDATE_SPOT = "spots/UPDATE_SPOT";
 
 // action
 
@@ -33,6 +34,13 @@ const deleteSpot = (spotId) => {
   return {
     type: DELETE_SPOT,
     spotId,
+  };
+};
+
+const updateSpot = (spot) => {
+  return {
+    type: UPDATE_SPOT,
+    spot,
   };
 };
 
@@ -103,6 +111,20 @@ export const deleteSpotThunk = (spotId) => async (dispatch) => {
   }
 };
 
+export const updateSpotThunk = (spot, spotId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/spots/${spotId}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(spot),
+  });
+
+  if (response.ok) {
+    const spot = await response.json();
+    dispatch(updateSpot(spot));
+    return spot;
+  }
+};
+
 //Initial State
 const initialState = { allSpots: {}, singleSpot: {} };
 
@@ -138,6 +160,18 @@ const spotReducer = (state = initialState, action) => {
       delete newState.allSpots[action.spotId];
       delete newState.singleSpot[action.spotId];
       return newState;
+    }
+    case UPDATE_SPOT: {
+      const newState = {
+        ...state,
+        allSpots: { ...state.allSpots },
+        singleSpot: { ...state.singleSpot },
+      };
+
+      newState.allSpots[action.spot.id] = {
+        ...newState.allSpots[action.spotId],
+        ...action.spot,
+      };
     }
     default:
       return state;

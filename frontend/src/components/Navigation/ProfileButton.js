@@ -6,7 +6,7 @@ import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import "./ProfileButton.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 
 // showMenu controls the display of the dropdown menu
 
@@ -45,41 +45,71 @@ function ProfileButton({ user }) {
   };
 
   const ulClassName = showMenu ? "" : " hidden";
+  const navLinkSpotName = "nav-link-create" + (user ? "" : " hidden");
 
   return (
     <>
+      <div className="new-spot-link">
+        <div>
+          <NavLink
+            className={navLinkSpotName}
+            to="/spots/new"
+            style={{
+              textDecoration: "none",
+              color: "white",
+              backgroundColor: "darkgrey",
+              padding: "10px",
+              border: "2px solid black",
+            }}
+          >
+            Create a New Spot
+          </NavLink>
+        </div>
+      </div>
+
       <button
         onClick={openMenu}
         id="profile-button"
         style={{ cursor: "pointer" }}
       >
-        <i className="fa-solid fa-bars" style={{ fontSize: "20px" }}></i>
+        <i class="fa-solid fa-bars" style={{ fontSize: "20px" }}></i>
         <i className="fas fa-user-circle" style={{ fontSize: "20px" }} />
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li>{user.username}</li>
-            <li>
-              Hello, {user.firstName} {/*{user.lastName} */}
-            </li>
-            <li>Email: {user.email}</li>
-            <li>
-              <button onClick={logout}>Log Out</button>
-            </li>
+            <div className="profile-container">
+              <div className="profile-drop">
+                <div id="hello">Hello, {user.firstName}</div>
+                <div id="hello-email">{user.email}</div>
+                <NavLink
+                  id="hello-manage"
+                  to="/spots/current"
+                  style={{ textDecoration: "none" }}
+                  onClick={(e) => closeMenu()}
+                >
+                  Manage Spots
+                </NavLink>
+                <button id="logout-button" onClick={logout}>
+                  Log Out
+                </button>
+              </div>
+            </div>
           </>
         ) : (
           <>
-            <OpenModalMenuItem
-              itemText="Log In"
-              onItemClick={closeMenu}
-              modalComponent={<LoginFormModal />}
-            />
-            <OpenModalMenuItem
-              itemText="Sign Up"
-              onItemClick={closeMenu}
-              modalComponent={<SignupFormModal />}
-            />
+            <div className="su-li">
+              <OpenModalMenuItem
+                itemText="Sign Up"
+                onItemClick={closeMenu}
+                modalComponent={<SignupFormModal />}
+              />
+              <OpenModalMenuItem
+                itemText="Log In"
+                onItemClick={closeMenu}
+                modalComponent={<LoginFormModal />}
+              />
+            </div>
           </>
         )}
       </ul>

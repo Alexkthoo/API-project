@@ -74,13 +74,15 @@ const UserSpot = () => {
                 </div>
               </NavLink>
               <div className="update-delete-button">
-                <NavLink
-                  style={{ textDecoration: "none" }}
-                  to={`/spots/${spot.id}/edit`}
-                  id="update-button"
-                >
-                  Update
-                </NavLink>
+                <button>
+                  <NavLink
+                    style={{ textDecoration: "none" }}
+                    to={`/spots/${spot.id}/edit`}
+                    id="update-button"
+                  >
+                    Update
+                  </NavLink>
+                </button>
                 <OpenModalButton
                   buttonText="Delete"
                   modalComponent={<DeleteModal spotId={spot.id} />}
