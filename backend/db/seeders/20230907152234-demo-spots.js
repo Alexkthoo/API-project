@@ -24,7 +24,7 @@ module.exports = {
           lng: 14.2437,
           name: "Silvermoon City",
           description:
-            "Silvermoon City is the crown jewel of the blood elves and their capital city. It is nestled in the northern reaches of the Eversong Woods (at the northernmost tip of the Eastern Kingdoms) in their ancestral homeland of Quel'Thalas. The beauty of the spires and thoroughfares of Silvermoon stand in stark contrast to the Dead Scar, the tainted path that Arthas Menethil tore through the city in his quest for power. Though nearly destroyed by Arthas' attack on the Sunwell, Silvermoon is once again a thriving city. Most recently, the rebirth of the Sunwell has lifted spirits among the elves, and they have continued to heal Silvermoon's scars in the hopes of returning their beloved capital to its former glory,the western half of it still being in ruins since the Third War.",
+            "Silvermoon City is the crown jewel of the blood elves and their capital city. It is nestled in the northern reaches of the Eversong Woods (at the northernmost tip of the Eastern Kingdoms) in their ancestral homeland of Quel'Thalas.",
           price: 200.99,
         },
         {
@@ -37,7 +37,7 @@ module.exports = {
           lng: 73.4194,
           name: "Stormwind City",
           description:
-            "Stormwind City, located north of Elwynn Forest on Azeroth region's northwest coast, is the capital city of the kingdom of Stormwind and the largest human city on Azeroth. After the Third War, it has become one of the last great human cities, and embodies the heart of the Alliance. Stormwind's willingness to work with others to find diplomatic solutions stands out as one of its true strengths. Its citizens hold fast to the principles of honor and justice as they defend their settlements, and the Alliance, against any aggressors.",
+            "Stormwind City, located north of Elwynn Forest on Azeroth region's northwest coast, is the capital city of the kingdom of Stormwind and the largest human city on Azeroth.",
           price: 2250,
         },
         {
@@ -76,7 +76,7 @@ module.exports = {
           lng: 55.4194,
           name: "Thunder Bluff",
           description:
-            "Thunder Bluff is the tauren capital city located in the northern part of the region of Mulgore on the continent of Kalimdor. The entire city is built on bluffs several hundred feet above the surrounding landscape and is accessible by elevators on the southwestern and northeastern sides. Established by the wise chieftain Cairne Bloodhoof and his stalwart tribe, Thunder Bluff overlooks the verdant land of Mulgore from atop a series of windswept mesas. Prior to the construction of the capital, the tauren had lived as nomads for countless generations, often under attack by marauding bands of centaur. With Thunder Bluff’s founding, however, the proud and good-spirited race was finally granted a permanent home. The city of many tribes is a hub for tauren, welcoming tradesfolk and artisans of every kind",
+            "Thunder Bluff is the tauren capital city located in the northern part of the region of Mulgore on the continent of Kalimdor. The entire city is built on bluffs several hundred feet above the surrounding landscape and is accessible by elevators on the southwestern and northeastern sides. Established by the wise chieftain Cairne Bloodhoof and his stalwart tribe, Thunder Bluff overlooks the verdant land of Mulgore from atop a series of windswept mesas.",
           price: 50,
         },
       ],
