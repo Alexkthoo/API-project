@@ -50,7 +50,7 @@ module.exports = {
           lng: 58.4194,
           name: "Ironforge",
           description:
-            "Ironforge is the capital city of the dwarves, proud members of the Alliance. It is the ancestral home of the Bronzebeard dwarves, and one of the oldest cities of Azeroth.",
+            "Ironforge is the capital city of the dwarves, proud members of the Alliance.",
           price: 500,
         },
         {
@@ -63,7 +63,7 @@ module.exports = {
           lng: 10.006123123,
           name: "Orgrimmar",
           description:
-            "Orgrimmar ['ɔɹgɹɪmɑɹ] is the capital city of the orcs, and the Horde as a whole. Nestled into a system of valleys on the northern edge of Durotar, the imposing warrior city is the seat of the Horde Council that governs the entire faction. It is the primary hub for player characters of the Horde and, as with all capital cities, has banks, class and profession trainers, and auction houses.",
+            "Orgrimmar ['ɔɹgɹɪmɑɹ] is the capital city of the orcs, and the Horde as a whole. ",
           price: 150,
         },
         {
@@ -76,7 +76,7 @@ module.exports = {
           lng: 55.4194,
           name: "Thunder Bluff",
           description:
-            "Thunder Bluff is the tauren capital city located in the northern part of the region of Mulgore on the continent of Kalimdor. The entire city is built on bluffs several hundred feet above the surrounding landscape and is accessible by elevators on the southwestern and northeastern sides.",
+            "Thunder Bluff is the tauren capital city located in the northern part of the region of Mulgore on the continent of Kalimdor.",
           price: 50,
         },
       ],
