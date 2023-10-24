@@ -15,17 +15,17 @@ module.exports = {
       [
         {
           spotId: 1,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/07058d7c-5a1d-4fef-9320-85f624bc3746/dfs5gev-32d0306d-fa7f-4553-b913-8790766f7426.png",
+          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/07058d7c-5a1d-4fef-9320-85f624bc3746/dfs5gev-32d0306d-fa7f-4553-b913-8790766f7426.png/v1/fill/w_894,h_894,q_70,strp/concept_art___silvermoon_s_street_in_the_morning_by_agnisagero_dfs5gev-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzA3MDU4ZDdjLTVhMWQtNGZlZi05MzIwLTg1ZjYyNGJjMzc0NlwvZGZzNWdldi0zMmQwMzA2ZC1mYTdmLTQ1NTMtYjkxMy04NzkwNzY2Zjc0MjYucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.UoP1-N8u2NUgXEUtYf8h7NBhEFFQcadE6tITZKsNwaA",
           preview: true,
         },
         {
           spotId: 1,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/07058d7c-5a1d-4fef-9320-85f624bc3746/dfs5g04-45cb0d19-fd93-48d8-8244-57b14b5d1f39.png",
+          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/07058d7c-5a1d-4fef-9320-85f624bc3746/dfs5g04-45cb0d19-fd93-48d8-8244-57b14b5d1f39.png/v1/fill/w_894,h_894,q_70,strp/concept_art___the_golden_throne_of_silvermoon_by_agnisagero_dfs5g04-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzA3MDU4ZDdjLTVhMWQtNGZlZi05MzIwLTg1ZjYyNGJjMzc0NlwvZGZzNWcwNC00NWNiMGQxOS1mZDkzLTQ4ZDgtODI0NC01N2IxNGI1ZDFmMzkucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.sHhcsEja-mGgg_m_b4hyAN4lPhWYUcoaX7XEvSKYhZw",
           preview: false,
         },
         {
           spotId: 1,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c9f2f40f-649c-4cf6-85d5-fd2cd8249129/d19ujop-72264654-3c62-484f-9ccd-a153e92bd40c.jpg",
+          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c9f2f40f-649c-4cf6-85d5-fd2cd8249129/d19ujop-72264654-3c62-484f-9ccd-a153e92bd40c.jpg/v1/fill/w_1600,h_914,q_75,strp/orgrimmar__horde_territory_by_imadreamwalker_d19ujop-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTE0IiwicGF0aCI6IlwvZlwvYzlmMmY0MGYtNjQ5Yy00Y2Y2LTg1ZDUtZmQyY2Q4MjQ5MTI5XC9kMTl1am9wLTcyMjY0NjU0LTNjNjItNDg0Zi05Y2NkLWExNTNlOTJiZDQwYy5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.0F59DahylE9ED0Qph1mjWUJg23yqZwivM1_SkRBy6Io",
           preview: false,
         },
         {
@@ -40,12 +40,12 @@ module.exports = {
         },
         {
           spotId: 2,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab3f60d0-bca7-4051-a7bc-2d032a6bd122/d4yd797-9b17425c-b2f7-4a72-96f2-884deddda7b3.jpg",
+          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab3f60d0-bca7-4051-a7bc-2d032a6bd122/d4yd797-9b17425c-b2f7-4a72-96f2-884deddda7b3.jpg/v1/fill/w_900,h_507,q_75,strp/stormwind_city_by_death_note_boy_d4yd797-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTA3IiwicGF0aCI6IlwvZlwvYWIzZjYwZDAtYmNhNy00MDUxLWE3YmMtMmQwMzJhNmJkMTIyXC9kNHlkNzk3LTliMTc0MjVjLWIyZjctNGE3Mi05NmYyLTg4NGRlZGRkYTdiMy5qcGciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.1OClL2Gn6NdVPP7z-i6kew5iWL9NoPP8IxbBOyF6PWg",
           preview: true,
         },
         {
           spotId: 2,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0bb46ca-d0b7-4eee-8eb5-dd07367838c0/d6p3gmw-cba9bbab-2054-4035-98f1-f30009417853.jpg",
+          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0bb46ca-d0b7-4eee-8eb5-dd07367838c0/d6p3gmw-cba9bbab-2054-4035-98f1-f30009417853.jpg/v1/fill/w_1228,h_651,q_70,strp/wow___stormwind_city_33_by_byorrsingyr_d6p3gmw-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAxOCIsInBhdGgiOiJcL2ZcL2MwYmI0NmNhLWQwYjctNGVlZS04ZWI1LWRkMDczNjc4MzhjMFwvZDZwM2dtdy1jYmE5YmJhYi0yMDU0LTQwMzUtOThmMS1mMzAwMDk0MTc4NTMuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Q2clL2hVTEd3IFL1qcO-aY8kmzZJ0S_XiR3TnHnB6os",
           preview: false,
         },
         {

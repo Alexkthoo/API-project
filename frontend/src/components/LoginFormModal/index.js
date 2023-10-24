@@ -27,7 +27,7 @@ function LoginFormModal() {
 
   const handleLogInDemo = (e) => {
     e.preventDefault();
-    const demoAcc = "ggnore";
+    const demoAcc = "Sylvanas_Windrunner";
     const demoPassword = "password";
     return dispatch(
       sessionActions.login({ credential: demoAcc, password: demoPassword })
