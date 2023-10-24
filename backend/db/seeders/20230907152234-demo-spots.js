@@ -24,7 +24,7 @@ module.exports = {
           lng: 14.2437,
           name: "Silvermoon City",
           description:
-            "Silvermoon City is the crown jewel of the blood elves and their capital city. It is nestled in the northern reaches of the Eversong Woods (at the northernmost tip of the Eastern Kingdoms) in their ancestral homeland of Quel'Thalas.",
+            "Silvermoon City is the crown jewel of the blood elves and their capital city.",
           price: 200.99,
         },
         {
@@ -50,7 +50,7 @@ module.exports = {
           lng: 58.4194,
           name: "Ironforge",
           description:
-            "Ironforge is the capital city of the dwarves, proud members of the Alliance. It is the ancestral home of the Bronzebeard dwarves, and one of the oldest cities of Azeroth.[1] The Council of Three Hammers rules the kingdom of Khaz Modan from the throne room within the city. The Great Forge area gave the city its name.",
+            "Ironforge is the capital city of the dwarves, proud members of the Alliance. It is the ancestral home of the Bronzebeard dwarves, and one of the oldest cities of Azeroth.",
           price: 500,
         },
         {
@@ -76,7 +76,7 @@ module.exports = {
           lng: 55.4194,
           name: "Thunder Bluff",
           description:
-            "Thunder Bluff is the tauren capital city located in the northern part of the region of Mulgore on the continent of Kalimdor. The entire city is built on bluffs several hundred feet above the surrounding landscape and is accessible by elevators on the southwestern and northeastern sides. Established by the wise chieftain Cairne Bloodhoof and his stalwart tribe, Thunder Bluff overlooks the verdant land of Mulgore from atop a series of windswept mesas.",
+            "Thunder Bluff is the tauren capital city located in the northern part of the region of Mulgore on the continent of Kalimdor. The entire city is built on bluffs several hundred feet above the surrounding landscape and is accessible by elevators on the southwestern and northeastern sides.",
           price: 50,
         },
       ],
