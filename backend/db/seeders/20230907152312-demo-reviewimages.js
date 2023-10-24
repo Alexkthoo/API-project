@@ -15,7 +15,7 @@ module.exports = {
       [
         {
           reviewId: 1,
-          url: "test1",
+          url: "https://blurpie.files.wordpress.com/2008/05/wowscrnshot_052608_150923.jpg",
         },
         {
           reviewId: 2,
@@ -24,6 +24,14 @@ module.exports = {
         {
           reviewId: 3,
           url: "test3",
+        },
+        {
+          reviewId: 4,
+          url: "test4",
+        },
+        {
+          reviewId: 5,
+          url: "test5",
         },
       ],
       { validate: true }

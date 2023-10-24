@@ -15,21 +15,33 @@ module.exports = {
       [
         {
           spotId: 1,
-          userId: 1,
-          review: "Beautiful Park",
-          stars: 4,
+          userId: 2,
+          review: "Not alliance friendly",
+          stars: 1,
         },
         {
           spotId: 2,
-          userId: 2,
-          review: "LA sucks",
-          stars: 2,
+          userId: 3,
+          review: "Nice to not see any horde here.",
+          stars: 5,
         },
         {
           spotId: 3,
-          userId: 3,
-          review: "Would come visit again",
+          userId: 4,
+          review: "The history of dwarfs are amazing",
           stars: 4,
+        },
+        {
+          spotId: 4,
+          userId: 5,
+          review: "The zapplin broke on us.",
+          stars: 1,
+        },
+        {
+          spotId: 5,
+          userId: 1,
+          review: "View is amazing but this place is hard to find",
+          stars: 3,
         },
       ],
       { validate: true }
