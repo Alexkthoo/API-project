@@ -72,7 +72,7 @@ function ProfileButton({ user }) {
         id="profile-button"
         style={{ cursor: "pointer" }}
       >
-        <i class="fa-solid fa-bars" style={{ fontSize: "20px" }}></i>
+        <i className="fa-solid fa-bars" style={{ fontSize: "20px" }}></i>
         <i className="fas fa-user-circle" style={{ fontSize: "20px" }} />
       </button>
       <ul className={ulClassName} ref={ulRef}>

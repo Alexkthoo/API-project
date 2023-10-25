@@ -11,8 +11,9 @@ function Navigation({ isLoaded }) {
   return (
     <div className="nav-container">
       <NavLink exact to="/">
-        <img className="wowbnb-icon" src={wowicon} alt="logo-image"></img>
+        <img className="wowbnb-icon" src={wowicon} alt="logo"></img>
       </NavLink>
+
       {isLoaded && <ProfileButton user={sessionUser} />}
     </div>
   );

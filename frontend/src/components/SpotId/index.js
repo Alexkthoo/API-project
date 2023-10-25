@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getSpotThunk, getAllSpotsThunk } from "../../store/spots";
 import AllReviews from "./spotReview";
 import { getAllReviewsThunk } from "../../store/review";
+import "./spotId.css";
 
 const SpotId = () => {
   const dispatch = useDispatch();
@@ -43,44 +44,55 @@ const SpotId = () => {
 
   return (
     <>
-      <div>
-        <h1>{Spot?.name}</h1>
-        <p>
-          {Spot?.city}, {Spot?.state}, {Spot?.country}
-        </p>
-        <div>
-          <img
-            src={Spot?.SpotImages?.find((img) => img.preview === true)?.url}
-            alt="img"
-          />
-          <div>
-            {Spot.SpotImages.filter((img, index) => index > 0).map(
-              (img, index) =>
-                index < 4 && img ? <img src={img.url} alt="img" /> : null
-            )}
-          </div>
-        </div>
-        <div>
-          <h2>
-            Hosted by {Spot?.Owner?.firstName} {Spot?.Owner?.lastName}
-          </h2>
-          <p>{Spot?.description}</p>
-        </div>
-        <div>
-          <div>
-            <div>
-              <b>${Spot?.price}</b> night
+      <div className="spotId-container">
+        {Spot?.id && (
+          <>
+            <div className="title-info">
+              <h2 className="spotId-name">{Spot.name}</h2>
+              <p className="spotId-location">
+                {Spot.city}, {Spot.state}, {Spot.country}
+              </p>
             </div>
+            <div className="image-container">
+              <img
+                id="spotId-main-image"
+                src={Spot?.SpotImages?.find((img) => img.preview === true)?.url}
+                alt="image-screen"
+              />
+
+              <div className="image-grid">
+                {Spot.SpotImages.filter((img, index) => index > 0).map(
+                  (img, index) =>
+                    index < 4 && img ? (
+                      <img src={img.url} className="grid-images" alt="img" />
+                    ) : null
+                )}
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+      <div className="description-container">
+        <div className="left-description">
+          Hosted by {Spot?.Owner?.firstName} {Spot?.Owner?.lastName}
+          <p>{Spot.description}</p>
+        </div>
+        <div className="right-description">
+          <div className="price-star">
             <div>
-              <i className="fa-solid fa-star"></i>
+              <b>${Spot.price}</b> night
+            </div>
+            <div className="inside-price-star">
+              <i class="fa-solid fa-star"></i>
               <div></div>
 
               <div>
-                {Spot?.numReviews ? <span>·</span> : ""}
-                {Spot?.numReviews ? (
+                {avgReview > 0 ? `${avgReview} ` : "New"}
+                {Spot.numReviews ? <span>·</span> : ""}
+                {Spot.numReviews ? (
                   <span>
-                    {Spot?.numReviews}
-                    {Spot?.numReviews === 1 ? " Review" : " Reviews"}
+                    {Spot.numReviews}
+                    {Spot.numReviews === 1 ? " Review" : " Reviews"}
                   </span>
                 ) : (
                   ""
@@ -93,15 +105,12 @@ const SpotId = () => {
           </button>
         </div>
       </div>
-      <div>
-        <div></div>
-      </div>
-      <div>
-        <div>
+      <div className="reviews-container">
+        <div className="top-reviews">
           <div>
-            <i></i>
+            <i className="fa-solid fa-star"></i>
           </div>
-          {Spot?.numReviews ? (
+          {Spot.numReviews ? (
             <div>
               {parseFloat(avgReview)?.toFixed(1)} · {Spot.numReviews}{" "}
               {Spot.numReviews === 1 ? "Review" : "Reviews"}

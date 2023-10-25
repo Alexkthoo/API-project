@@ -7,6 +7,7 @@ import { getSpotThunk } from "../../store/spots";
 import OpenModalButton from "../OpenModalButton";
 import DeleteReviewModal from "../ReviewModal/DeleteModal";
 import CreateModal from "../ReviewModal/CreateModal";
+import "./spotReview.css";
 
 const AllReviews = ({ spotId }) => {
   const review = useSelector((state) => state.reviews);
@@ -53,7 +54,7 @@ const AllReviews = ({ spotId }) => {
   return (
     <>
       {!userReview && user?.id !== spot.Owner?.id && (
-        <div>
+        <div id="post-review-button">
           <OpenModalButton
             buttonText="Post Your Review"
             modalComponent={<CreateModal spotId={spotId} />}
@@ -63,10 +64,10 @@ const AllReviews = ({ spotId }) => {
           )}
         </div>
       )}
-      <div>
+      <div className="all-reviews-grid">
         {reviewArr.toReversed().map((review) => (
           <>
-            <h3>{review?.User?.firstName}</h3>
+            <h3 className="review-name">{review?.User?.firstName}</h3>
             <h5>
               {new Date(review.createdAt).toLocaleString("default", {
                 month: "long",
@@ -75,7 +76,7 @@ const AllReviews = ({ spotId }) => {
             </h5>
             <h4>{review.review}</h4>
             {user.id === review.userId && (
-              <div>
+              <div id="delete-review-home">
                 <OpenModalButton
                   buttonText="Delete Review"
                   modalComponent={

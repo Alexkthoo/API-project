@@ -1,17 +1,79 @@
 #profile-button {
-    margin-left: -500px;
-    padding: 10px;
-    background-color: lightgray;
-    border-radius: 25px 25px 25px;
-    /* border: 5px dotted greenyellow */
-  }
+  margin-left: -500px;
+  padding: 10px;
+  background-color: lightgray;
+  border-radius: 25px 25px 25px;
+}
 
-  #profile-button > .fa-user-circle {
-    width: 30px;
+#profile-button > .fa-user-circle {
+  width: 30px;
+}
 
-  }
+.profile-dropdown {
+  right: 1em;
+  z-index: 20;
+}
 
-  #profile-button > .fa-bars {
-    width: 30px;
-    /* border: 5px dotted greenyellow */
-  }
+.profile-drop {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* #hello, #hello-email {
+  margin-left: 500px
+}
+
+#logout-button {
+  margin-left: 500px;
+} */
+
+#hello-email, #hello-manage {
+  border-bottom: 1px solid rgb(107, 104, 104);
+}
+
+.nav-link-create {
+  display: flex
+}
+
+.hidden {
+  display: none;
+}
+
+.profile-container {
+  background-color: white;
+  border: 1px solid black;
+  width: 200px;
+  margin-top: 160px;
+  margin-right: 70px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  background-color: white;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+#logout-button {
+  width:100px;
+  margin-left: 10px;
+  border-radius: 15px 15px 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  background-color: rgb(107, 104, 104);
+  color: white;
+}
+
+.su-li {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  padding-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-right: 70px;
+  margin-top: 95px;
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
