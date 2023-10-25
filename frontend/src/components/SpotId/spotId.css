@@ -106,10 +106,12 @@
     margin-right: 50px;
     padding-left: 80px;
     padding-right: 80px;
-    background-color: #FD4556;
+    background-color: #0a12f1;
     color: white;
-    box-shadow: 3px 3px 3px rgba(13, 13, 14, 0.2);
+    /* box-shadow: 3px 3px 3px rgba(13, 13, 14, 0.2); */
     cursor: pointer;
+    border-radius: 10px;
+    height: 30px;
 }
 
 .top-reviews {
