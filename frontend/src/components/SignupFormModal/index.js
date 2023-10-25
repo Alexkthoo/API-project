@@ -43,12 +43,12 @@ function SignupFormModal() {
   };
 
   const disableSignUp =
-    (!email &&
-      !username &&
-      !firstName &&
-      !lastName &&
-      !password &&
-      !confirmPassword) ||
+    !email ||
+    !username ||
+    !firstName ||
+    !lastName ||
+    !password ||
+    !confirmPassword ||
     username.length < 4 ||
     password.length < 6;
 

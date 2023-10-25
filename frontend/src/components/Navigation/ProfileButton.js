@@ -5,7 +5,7 @@ import * as sessionActions from "../../store/session";
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
-import "./ProfileButton.css";
+// import "./ProfileButton.css";
 import { useHistory, NavLink } from "react-router-dom";
 
 // showMenu controls the display of the dropdown menu
@@ -44,29 +44,11 @@ function ProfileButton({ user }) {
     history.push("/");
   };
 
-  const ulClassName = showMenu ? "" : " hidden";
-  const navLinkSpotName = "nav-link-create" + (user ? "" : " hidden");
+  const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
+  // const navLinkSpotName = "nav-link-create" + (user ? "" : " hidden");
 
   return (
     <>
-      <div className="new-spot-link">
-        <div>
-          <NavLink
-            className={navLinkSpotName}
-            to="/spots/new"
-            style={{
-              textDecoration: "none",
-              color: "white",
-              backgroundColor: "darkgrey",
-              padding: "10px",
-              border: "2px solid black",
-            }}
-          >
-            Create a New Spot
-          </NavLink>
-        </div>
-      </div>
-
       <button
         onClick={openMenu}
         id="profile-button"
@@ -75,7 +57,7 @@ function ProfileButton({ user }) {
         <i className="fa-solid fa-bars" style={{ fontSize: "20px" }}></i>
         <i className="fas fa-user-circle" style={{ fontSize: "20px" }} />
       </button>
-      <ul className={ulClassName} ref={ulRef}>
+      <ul id="dropdown-info" className={ulClassName} ref={ulRef}>
         {user ? (
           <>
             <div className="profile-container">
