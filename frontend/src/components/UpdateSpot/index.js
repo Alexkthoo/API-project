@@ -19,11 +19,13 @@ const SpotUpdateForm = () => {
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  //   const [image, setImage] = useState("");
-  //   const [img2, setImg2] = useState("");
-  //   const [img3, setImg3] = useState("");
-  //   const [img4, setImg4] = useState("");
-  //   const [img5, setImg5] = useState("");
+  const [lat, setLat] = useState(1);
+  const [lng, setLng] = useState(1);
+  // const [image, setImage] = useState('')
+  // const [img2, setImg2] = useState('')
+  // const [img3, setImg3] = useState('')
+  // const [img4, setImg4] = useState('')
+  // const [img5, setImg5] = useState('')
   const [validationErrors, setValidationErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -92,6 +94,8 @@ const SpotUpdateForm = () => {
         name,
         description,
         price,
+        lat,
+        lng,
       };
 
       const updatedSpot = await dispatch(updateSpotThunk(payload, spotId));
