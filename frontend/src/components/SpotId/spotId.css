@@ -7,7 +7,7 @@
 }
 
 #spotId-main-image {
-    height: 300px;
+    height: 320px;
     object-fit: cover;
     margin-left: 50px;
     width: 54%;
@@ -130,4 +130,5 @@
 
 .reviews-container {
     margin-bottom: 100px;
+
 }

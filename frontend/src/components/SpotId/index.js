@@ -57,7 +57,7 @@ const SpotId = () => {
               <img
                 id="spotId-main-image"
                 src={Spot?.SpotImages?.find((img) => img.preview === true)?.url}
-                alt="image-screen"
+                alt="screen"
               />
 
               <div className="image-grid">

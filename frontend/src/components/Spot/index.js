@@ -16,19 +16,24 @@ const Spots = () => {
 
   return (
     <>
-      <div className="spots-wrapper">
-        <div className="spots-grid">
-          {getAllSpots.map((spot) => (
-            <NavLink to={`/spots/${spot.id}`} key={spot.id}>
-              <div className="each-spot">
-                <div className="tooltip">
-                  <img id="spot-img" src={`${spot.previewImage}`} alt="img" />
-                  <span className="tooltiptext">{spot.name}</span>
-                </div>
-                <div className="spot-info">
-                  <div className="city">
+      <div className="spots-grid">
+        {getAllSpots.map((spot) => (
+          <NavLink to={`/spots/${spot.id}`} key={spot.id}>
+            <div className="each-spot">
+              <div className="tooltip">
+                <img id="spot-img" src={`${spot.previewImage}`} alt="img" />
+                <span className="tooltiptext">{spot.name}</span>
+              </div>
+              <div className="spot-info">
+                <div className="left-spot-info">
+                  <p className="city">
                     {spot.city}, {spot.state}
-                  </div>
+                  </p>
+                  <p className="price">
+                    <b>${spot.price}</b> night
+                  </p>
+                </div>
+                <div className="right-review-info">
                   {spot.avgRating ? (
                     <div className="review">
                       <b>
@@ -43,13 +48,10 @@ const Spots = () => {
                     </div>
                   )}
                 </div>
-                <div className="price">
-                  <b>${spot.price}</b> night
-                </div>
               </div>
-            </NavLink>
-          ))}
-        </div>
+            </div>
+          </NavLink>
+        ))}
       </div>
     </>
   );
