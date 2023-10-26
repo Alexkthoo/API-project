@@ -107,16 +107,16 @@ const SpotId = () => {
       </div>
       <div className="reviews-container">
         <div className="top-reviews">
-          <div>
+          <div className="review-star">
             <i className="fa-solid fa-star"></i>
           </div>
           {Spot.numReviews ? (
-            <div>
+            <div className="review-star-review">
               {parseFloat(avgReview)?.toFixed(1)} · {Spot.numReviews}{" "}
               {Spot.numReviews === 1 ? "Review" : "Reviews"}
             </div>
           ) : (
-            <div>New</div>
+            <div className="new-review-text">New</div>
           )}
         </div>
         <AllReviews spotId={spotId} />
