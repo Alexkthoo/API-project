@@ -79,12 +79,14 @@
 
 #spot-create {
     width: 119px;
+    margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: red;
+    background-color: rgb(199, 12, 12);
     color: white;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 2px 2px 2px rgb(111, 109, 109);
     cursor: pointer;
+    display: block;
 }
 
 .errors {
@@ -100,4 +102,11 @@
 
 #form-city {
     width: 330px;
+}
+
+.img-link-box {
+    row-gap: 8px;
+}
+.create-form {
+    border: 2px dashed red;
 }
