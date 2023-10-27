@@ -71,7 +71,7 @@ const SpotUpdateForm = () => {
     if (name.length < 5 || name.length > 30)
       errors.name = "Please enter a valid name";
 
-    if (!price || !Number(price)) {
+    if (!price || !Number(price) || price < 0) {
       errors.price = "Price is required";
     } else if (price.length > 6) {
       errors.price = "Please offer a genuine price for your clients";

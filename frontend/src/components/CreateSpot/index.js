@@ -7,8 +7,8 @@ import { useHistory } from "react-router-dom";
 import "../CreateSpot/CreateSpot.css";
 
 const CreateSpot = ({ spot }) => {
-    const dispatch = useDispatch();
-    const history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
   const currentUser = useSelector((state) => state.session.user);
 
   const [country, setCountry] = useState("");
@@ -57,7 +57,7 @@ const CreateSpot = ({ spot }) => {
       errors.name = "Please enter a valid name";
 
     // Checking if Number and checking for length
-    if (!price || !Number(price)) {
+    if (!price || !Number(price) || price < 0) {
       errors.price = "Price is required";
     } else if (price.length > 6) {
       errors.price = "Please offer a genuine price for your clients";

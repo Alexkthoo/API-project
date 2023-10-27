@@ -46,10 +46,11 @@ function LoginFormModal() {
 
   return (
     // login
-    <>
+    <div className="login-container">
       <h1>Log In</h1>
+
+      <form onSubmit={handleSubmit} className="login-form">
       <label>Username or Email</label>
-      <form onSubmit={handleSubmit}>
         <label>
           <input
             placeholder="Username or Email"
@@ -70,12 +71,12 @@ function LoginFormModal() {
           />
         </label>
         {errors.credential && <p>{errors.credential}</p>}
+      </form>
         <button type="submit" disabled={disableLogIn}>
           Log In
         </button>
-      </form>
       <button onClick={handleLogInDemo}>Log in as Demo User</button>
-    </>
+    </div>
   );
 }
 
