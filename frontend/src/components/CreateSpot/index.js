@@ -117,7 +117,7 @@ const CreateSpot = ({ spot }) => {
     <>
       <div className="form-container">
         <div className="spot-form">
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="create-form">
             <div className="top-info">
               <h2>Create a new Spot</h2>
               <h3>Where's your place located?</h3>
