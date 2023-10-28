@@ -13,8 +13,9 @@
     display: flex;
     flex-direction: column;
     gap: 11px;
-    background-image: url("https://cdn.mos.cms.futurecdn.net/XnvF48RqPvSZsvpSpNv27a.jpg");
+    background-image: url("https://e0.pxfuel.com/wallpapers/361/433/desktop-wallpaper-in-celebration-of-wow-classic-a-painting-of-the-login-screen-credit-to-u-sharkrap-world-of-warcraft-world-of-warcraft-characters-world-of-warcraft-world-of-warcraft-minimalist.jpg");
     background-size: cover;
+    margin: auto;
 }
 
 .login-form{
