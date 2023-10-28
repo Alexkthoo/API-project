@@ -57,25 +57,25 @@ function ProfileButton({ user }) {
         <i className="fa-solid fa-bars" style={{ fontSize: "20px" }}></i>
         <i className="fas fa-user-circle" style={{ fontSize: "20px" }} />
       </button>
-      <ul id="dropdown-info" className={ulClassName} ref={ulRef}>
+      <div id="dropdown-info" className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <div className="profile-container">
-              <div className="profile-drop">
-                <div id="hello">Hello, {user.firstName}</div>
-                <div id="hello-email">{user.email}</div>
-                <NavLink
-                  id="hello-manage"
-                  to="/spots/current"
-                  style={{ textDecoration: "none" }}
-                  onClick={(e) => closeMenu()}
-                >
-                  Manage Spots
-                </NavLink>
-                <button id="logout-button" onClick={logout}>
-                  Log Out
-                </button>
-              </div>
+            <div id="hello">Hello, {user.firstName}</div>
+            <div id="hello-email">{user.email}</div>
+            <div>
+              <NavLink
+                id="hello-manage"
+                to="/spots/current"
+                style={{ textDecoration: "none" }}
+                onClick={(e) => closeMenu()}
+              >
+                Manage Spots
+              </NavLink>
+            </div>
+            <div>
+              <button id="logout-button" onClick={logout}>
+                Log Out
+              </button>
             </div>
           </>
         ) : (
@@ -94,7 +94,7 @@ function ProfileButton({ user }) {
             </div>
           </>
         )}
-      </ul>
+      </div>
     </>
   );
 }
