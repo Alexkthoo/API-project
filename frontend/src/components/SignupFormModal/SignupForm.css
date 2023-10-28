@@ -1,0 +1,69 @@
+.sign-up-form-box {
+    display: inline-block;
+    text-align: right;
+
+        z-index: 1;
+        /* background: #FFFFFF; */
+        /* max-width: 360px; */
+        /* margin: 0 auto 100px; */
+        padding: 45px;
+        /* text-align: center; */
+        /* box-shadow: 0 0 20px 0 rgba(201, 51, 51, 0.2); */
+        /* display: flex; */
+
+
+}
+
+.sign-up-container h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    color: rgb(255, 255, 255);
+}
+
+.sign-up-form div {
+margin-bottom: 10px;
+
+}
+
+.sign-up-form div label input {
+    margin-left: 8px;
+    width: 220px;
+}
+
+.sign-up-form div label {
+    /* border: 2px dashed red; */
+    color: white;
+}
+
+.sign-up-submit-button {
+    display: flex;
+    justify-content: center;
+}
+
+ .sign-up-form p {
+
+    display: flex;
+    justify-content:center;
+    color: red;
+    font-size: 15px;
+}
+
+.sign-up-sign {
+    padding-top: 5px;
+}
+
+.sign-up-container {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2022/04/19/Dragonflight-WoW-alexstraza-1024x576.jpg");
+
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#modal-content {
+    border-radius: 10px;
+}
