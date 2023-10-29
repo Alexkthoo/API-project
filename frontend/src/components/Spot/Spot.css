@@ -3,19 +3,6 @@
     font-family: Semplicita Pro,Open Sans,Arial,Helvetica,sans-serif;
     text-decoration: none;
     color: #000000;
-
-}
-
-.gold-img {
-    width: 12px;
-    /* mix-blend-mode: multiply; */
-    /* background-color: transparent */
-    padding-top: 5px;
-
-}
-
-.total-gold-amount {
-    /* align-items: baseline; */
 }
 
 .spots-grid {
@@ -31,6 +18,48 @@
   margin-top: 60px;
 
   }
+
+  @media (max-width: 1099px) {
+    .spots-grid {
+      margin-left: 23px;
+    }
+  }
+
+@media (min-width: 1100px){
+    .spots-grid {
+      display: grid;
+      gap: 25px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .nav-container {
+      width: auto;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .single-spot-container {
+        max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+    }
+
+
+  }
+
+.gold-img {
+    width: 12px;
+    /* mix-blend-mode: multiply; */
+    /* background-color: transparent */
+    padding-top: 5px;
+
+}
+
+
+
 
   #spot-img {
     min-width: 245px;

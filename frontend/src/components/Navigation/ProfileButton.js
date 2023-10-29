@@ -48,7 +48,7 @@ function ProfileButton({ user }) {
   // const navLinkSpotName = "nav-link-create" + (user ? "" : " hidden");
 
   return (
-    <>
+    <div className="user-profile-button-container">
       <button
         onClick={openMenu}
         id="profile-button"
@@ -95,7 +95,7 @@ function ProfileButton({ user }) {
           </>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
