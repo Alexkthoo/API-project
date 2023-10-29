@@ -43,7 +43,7 @@ const SpotId = () => {
   }
 
   return (
-    <>
+    <div className="single-spot-container">
       <div className="spotId-container">
         {Spot?.id && (
           <>
@@ -128,7 +128,7 @@ const SpotId = () => {
         </div>
         <AllReviews spotId={spotId} />
       </div>
-    </>
+    </div>
   );
 };
 
