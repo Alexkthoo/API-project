@@ -49,8 +49,8 @@ const CreateSpot = ({ spot }) => {
       errors.state = "Please enter a valid state";
 
     if (!description) errors.description = "Description is required";
-    if (description.length < 30)
-      errors.description = "Description needs a minimum of 30 characters";
+    if (description.length < 30 || description.length > 256)
+      errors.description = "Description needs a minimum of 30 characters and a maximun of 256 characters";
 
     if (!name) errors.name = "Name is required";
     if (name.length < 5 || name.length > 30)
@@ -207,6 +207,7 @@ const CreateSpot = ({ spot }) => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
+              <p>Current characters {description.length}</p>
               {validationErrors.description && submitted && (
                 <p className="errors">{validationErrors.description}</p>
               )}

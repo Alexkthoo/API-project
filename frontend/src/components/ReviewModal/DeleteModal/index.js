@@ -2,8 +2,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useModal } from "../../../context/Modal";
 import { deleteReviewThunk } from "../../../store/review";
-
-// import "./CreateReviewModal.css";
+import "./DeleteModal.css";
 
 const DeleteReviewModal = ({ spotId, reviewId }) => {
   const dispatch = useDispatch();
@@ -22,13 +21,20 @@ const DeleteReviewModal = ({ spotId, reviewId }) => {
 
   return (
     <>
-      <div>
+      <div className="delete-modal-container">
         <h3>Confirm Delete</h3>
         <p>Are you sure you want to delete this review?</p>
-        <div>
-          <button onClick={deleteIt}>Yes (Delete Review)</button>
-          <button onClick={dontDelete}>No (Keep Review)</button>
-        </div>
+
+        <button onClick={deleteIt} className="modal-button" id="delete-button">
+          Yes (Delete Review)
+        </button>
+        <button
+          onClick={dontDelete}
+          className="modal-button"
+          id="cancel-button"
+        >
+          No (Keep Review)
+        </button>
       </div>
     </>
   );

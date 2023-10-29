@@ -82,6 +82,10 @@
     margin-left: 50px;
 } */
 
+.left-description {
+    padding-right: 17px;
+}
+
 .right-description {
     border: 2px solid black;
     border-radius: 10px 10px 10px;

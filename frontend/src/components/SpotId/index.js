@@ -80,7 +80,14 @@ const SpotId = () => {
         <div className="right-description">
           <div className="price-star">
             <div>
-              <b>${Spot.price}</b> night
+              <b>
+                {Spot.price}{" "}
+                <img
+                  className="gold-img"
+                  src="https://w7.pngwing.com/pngs/466/390/png-transparent-gold-coin-gold-bar-gold-as-an-investment-coin-game-gold-coin-orange-thumbnail.png"
+                />
+              </b>{" "}
+              night
             </div>
             <div className="inside-price-star">
               <i class="fa-solid fa-star"></i>

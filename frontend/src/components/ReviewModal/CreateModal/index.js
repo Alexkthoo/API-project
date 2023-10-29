@@ -55,11 +55,12 @@ const CreateModal = ({ spotId }) => {
 
   return (
     <>
-      <div>
+      <div className="create-review-modal-container">
         <h3>How was your stay?</h3>
         <form onSubmit={onSubmit}>
           <label>
             <textarea
+            className="create-review-description"
               rows="5"
               cols="40"
               type="text"
@@ -70,7 +71,7 @@ const CreateModal = ({ spotId }) => {
           {validationErrors.review && submitted && (
             <p>{validationErrors.review}</p>
           )}
-          <div>
+          <div className="create-review-star">
             <div
               className={
                 activeRating >= 1
@@ -133,6 +134,7 @@ const CreateModal = ({ spotId }) => {
             Stars
           </div>
           <button
+          className="submit-review-button"
             type="submit"
             id={reviewButtonId}
             disabled={review.length < 10 || !stars}
