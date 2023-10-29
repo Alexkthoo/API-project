@@ -7,6 +7,7 @@
   text-align: center;
   /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
   display: flex;
+
 }
 
 .login-container {
@@ -36,4 +37,16 @@
 
 .password-form {
     padding-right: 8px;
+}
+
+.login-container h1{
+    color: white
+}
+
+.username-fill-form label {
+    color: white
+}
+
+.password-fill-form label {
+    color: white
 }
