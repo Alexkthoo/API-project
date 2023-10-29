@@ -69,7 +69,14 @@ const UserSpot = () => {
                     )}
                   </div>
                   <div className="price">
-                    <b>${spot.price}</b> night
+                    <b>
+                      {spot.price}
+                      <img
+                        className="gold-img"
+                        src="https://w7.pngwing.com/pngs/466/390/png-transparent-gold-coin-gold-bar-gold-as-an-investment-coin-game-gold-coin-orange-thumbnail.png"
+                      />
+                    </b>{" "}
+                    night
                   </div>
                 </div>
               </NavLink>
