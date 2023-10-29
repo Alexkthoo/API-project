@@ -21,8 +21,9 @@ const CreateModal = ({ spotId }) => {
 
   useEffect(() => {
     const errors = {};
-    if (review.length < 10)
-      errors.review = "Please enter more than 10 characters";
+    if (review.length < 10 || review.length > 256)
+      errors.review =
+        "Please enter more than 10 characters and no more than 256 characters";
     setValidationErrors(errors);
   }, [review]);
 
@@ -60,7 +61,7 @@ const CreateModal = ({ spotId }) => {
         <form onSubmit={onSubmit}>
           <label>
             <textarea
-            className="create-review-description"
+              className="create-review-description"
               rows="5"
               cols="40"
               type="text"
@@ -134,7 +135,7 @@ const CreateModal = ({ spotId }) => {
             Stars
           </div>
           <button
-          className="submit-review-button"
+            className="submit-review-button"
             type="submit"
             id={reviewButtonId}
             disabled={review.length < 10 || !stars}

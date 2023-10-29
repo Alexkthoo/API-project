@@ -54,19 +54,16 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 6px;
     width: 300px;
+    margin-left: 4px;
+    height: 319px;
 }
 
-.grid-images {
-    height: 150px;
-    width: 100%;
-    object-fit: cover;
-}
 
  .grid-images {
-    height: 150px;
+    height: 157px;
     width: 100%;
     object-fit: cover;
-    padding: 7px;
+    padding: 0px;
 }
 
 .description-container {
