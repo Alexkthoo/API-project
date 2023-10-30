@@ -15,7 +15,7 @@ module.exports = {
       [
         {
           spotId: 1,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/07058d7c-5a1d-4fef-9320-85f624bc3746/dfs5gev-32d0306d-fa7f-4553-b913-8790766f7426.png/v1/fill/w_894,h_894,q_70,strp/concept_art___silvermoon_s_street_in_the_morning_by_agnisagero_dfs5gev-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzA3MDU4ZDdjLTVhMWQtNGZlZi05MzIwLTg1ZjYyNGJjMzc0NlwvZGZzNWdldi0zMmQwMzA2ZC1mYTdmLTQ1NTMtYjkxMy04NzkwNzY2Zjc0MjYucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.UoP1-N8u2NUgXEUtYf8h7NBhEFFQcadE6tITZKsNwaA",
+          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ca85bac9-b1bd-48b9-9b43-cf65b22b0861/df4g2ta-baed92f9-7b6a-4008-b4dc-d387855c7f4c.png/v1/fill/w_1280,h_720,q_80,strp/silvermoon_city_by_lionelschramm_df4g2ta-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvY2E4NWJhYzktYjFiZC00OGI5LTliNDMtY2Y2NWIyMmIwODYxXC9kZjRnMnRhLWJhZWQ5MmY5LTdiNmEtNDAwOC1iNGRjLWQzODc4NTVjN2Y0Yy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.dMIeQkwYzWkfmnCFvnxjBmLwUUE0bW6DfwE0aq2pYZ8",
           preview: true,
         },
         {
@@ -25,27 +25,42 @@ module.exports = {
         },
         {
           spotId: 1,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c9f2f40f-649c-4cf6-85d5-fd2cd8249129/d19ujop-72264654-3c62-484f-9ccd-a153e92bd40c.jpg/v1/fill/w_1600,h_914,q_75,strp/orgrimmar__horde_territory_by_imadreamwalker_d19ujop-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTE0IiwicGF0aCI6IlwvZlwvYzlmMmY0MGYtNjQ5Yy00Y2Y2LTg1ZDUtZmQyY2Q4MjQ5MTI5XC9kMTl1am9wLTcyMjY0NjU0LTNjNjItNDg0Zi05Y2NkLWExNTNlOTJiZDQwYy5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.0F59DahylE9ED0Qph1mjWUJg23yqZwivM1_SkRBy6Io",
+          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/07058d7c-5a1d-4fef-9320-85f624bc3746/dfs5gev-32d0306d-fa7f-4553-b913-8790766f7426.png/v1/fill/w_894,h_894,q_70,strp/concept_art___silvermoon_s_street_in_the_morning_by_agnisagero_dfs5gev-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcLzA3MDU4ZDdjLTVhMWQtNGZlZi05MzIwLTg1ZjYyNGJjMzc0NlwvZGZzNWdldi0zMmQwMzA2ZC1mYTdmLTQ1NTMtYjkxMy04NzkwNzY2Zjc0MjYucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.UoP1-N8u2NUgXEUtYf8h7NBhEFFQcadE6tITZKsNwaA",
           preview: false,
         },
         {
           spotId: 1,
-          url: "https://www.home-designing.com/wp-content/uploads/2010/05/ironman_stark_house_aerial_art.jpg",
+          url: "https://steamuserimages-a.akamaihd.net/ugc/993512944591188233/8F3469616A50FC7BFADB6D241182CF0B67932BEF/?imw=1024&imh=507&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
           preview: false,
         },
         {
           spotId: 1,
-          url: "https://customizeminifiguresintelligence.files.wordpress.com/2020/06/panlos613001_004.jpg?w=723",
+          url: "https://images3.alphacoders.com/640/640378.jpg",
           preview: false,
         },
         {
           spotId: 2,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab3f60d0-bca7-4051-a7bc-2d032a6bd122/d4yd797-9b17425c-b2f7-4a72-96f2-884deddda7b3.jpg/v1/fill/w_900,h_507,q_75,strp/stormwind_city_by_death_note_boy_d4yd797-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTA3IiwicGF0aCI6IlwvZlwvYWIzZjYwZDAtYmNhNy00MDUxLWE3YmMtMmQwMzJhNmJkMTIyXC9kNHlkNzk3LTliMTc0MjVjLWIyZjctNGE3Mi05NmYyLTg4NGRlZGRkYTdiMy5qcGciLCJ3aWR0aCI6Ijw9OTAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.1OClL2Gn6NdVPP7z-i6kew5iWL9NoPP8IxbBOyF6PWg",
+          url: "https://cdna.artstation.com/p/assets/images/images/033/260/452/large/dongming-yang-60.jpg",
           preview: true,
         },
         {
           spotId: 2,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0bb46ca-d0b7-4eee-8eb5-dd07367838c0/d6p3gmw-cba9bbab-2054-4035-98f1-f30009417853.jpg/v1/fill/w_1228,h_651,q_70,strp/wow___stormwind_city_33_by_byorrsingyr_d6p3gmw-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAxOCIsInBhdGgiOiJcL2ZcL2MwYmI0NmNhLWQwYjctNGVlZS04ZWI1LWRkMDczNjc4MzhjMFwvZDZwM2dtdy1jYmE5YmJhYi0yMDU0LTQwMzUtOThmMS1mMzAwMDk0MTc4NTMuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Q2clL2hVTEd3IFL1qcO-aY8kmzZJ0S_XiR3TnHnB6os",
+          url: "https://wallpapercave.com/wp/wp11106909.png",
+          preview: false,
+        },
+        {
+          spotId: 2,
+          url: "https://i.imgur.com/Rw6LiMG.jpeg",
+          preview: false,
+        },
+        {
+          spotId: 2,
+          url: "https://wow.zamimg.com/uploads/screenshots/normal/867268.jpg",
+          preview: false,
+        },
+        {
+          spotId: 2,
+          url: "https://www.tomshardware.fr/content/uploads/sites/3/2021/03/wow.png",
           preview: false,
         },
         {
@@ -55,7 +70,22 @@ module.exports = {
         },
         {
           spotId: 3,
-          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/60cefd3a-23dc-4018-91c9-94437a043cd7/dne5s4-8c77f589-3c35-45c3-8302-a6b65580fe5c.jpg/v1/fill/w_1190,h_672,q_70,strp/ironforge_by_tonz0phun_dne5s4-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzY4IiwicGF0aCI6IlwvZlwvNjBjZWZkM2EtMjNkYy00MDE4LTkxYzktOTQ0MzdhMDQzY2Q3XC9kbmU1czQtOGM3N2Y1ODktM2MzNS00NWMzLTgzMDItYTZiNjU1ODBmZTVjLmpwZyIsIndpZHRoIjoiPD0xMzYwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.N_-Fe0_jj8uT9AJjlMWKDyxCcZb-602OsIL8tNDzbiI",
+          url: "https://pbs.twimg.com/media/D9L0oeXXYAADs-9.jpg",
+          preview: false,
+        },
+        {
+          spotId: 3,
+          url: "https://i.pinimg.com/originals/62/8c/23/628c23bd020f3baa9b6a4f989568f3b2.jpg",
+          preview: false,
+        },
+        {
+          spotId: 3,
+          url: "https://wow.zamimg.com/uploads/screenshots/normal/523340-movie-5-15.jpg",
+          preview: false,
+        },
+        {
+          spotId: 3,
+          url: "https://i.imgur.com/n4ciU4P.jpeg",
           preview: false,
         },
         {
@@ -69,9 +99,44 @@ module.exports = {
           preview: false,
         },
         {
+          spotId: 4,
+          url: "https://cdnb.artstation.com/p/assets/images/images/015/225/963/large/jorge-jacinto-azeroth-journey-durotar-red.jpg?1547564255",
+          preview: false,
+        },
+        {
+          spotId: 4,
+          url: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/410ce040-e462-4913-a649-321fff49b562/d1th0h8-abdb08cb-3006-4a5c-a477-d3dfb618ffdc.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQxMGNlMDQwLWU0NjItNDkxMy1hNjQ5LTMyMWZmZjQ5YjU2MlwvZDF0aDBoOC1hYmRiMDhjYi0zMDA2LTRhNWMtYTQ3Ny1kM2RmYjYxOGZmZGMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kq2pa-Bt1zhDK-fN4ssTTqoo2iTijTZ9xW1MUmLZl9g",
+          preview: false,
+        },
+        {
+          spotId: 4,
+          url: "https://i.pinimg.com/736x/59/ee/a8/59eea83e6e792f13e26a976c6f2baeb4.jpg",
+          preview: false,
+        },
+        {
           spotId: 5,
-          url: "https://wow.zamimg.com/uploads/guide/seo/7648.jpg?1546724238",
+          url: "https://i.pinimg.com/originals/76/2c/2d/762c2d3395c0afaeee013573e60aebc7.jpg",
           preview: true,
+        },
+        {
+          spotId: 5,
+          url: "https://wow.zamimg.com/uploads/blog/images/22976-thunder-bluff-in-unreal-engine-by-aleksandr-timoshenko.jpg",
+          preview: false,
+        },
+        {
+          spotId: 5,
+          url: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2019/09/003.jpg",
+          preview: false,
+        },
+        {
+          spotId: 5,
+          url: "https://blizzardwatch.com/wp-content/uploads/2016/12/storytellers-circle.jpg",
+          preview: false,
+        },
+        {
+          spotId: 5,
+          url: "https://mmo-sankar.de/wp-content/uploads/2021/11/wow-classic-levelgebiete-allianz-horde.jpg",
+          preview: false,
         },
       ],
       { validate: true }
