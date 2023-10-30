@@ -125,6 +125,7 @@
     font-size: 14px;
     box-shadow: 3px 3px 3px black;
     width: 201px;
+    border: 1px solid black;
 }
 
 .top-reviews {
