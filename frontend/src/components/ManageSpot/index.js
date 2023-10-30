@@ -30,7 +30,7 @@ const UserSpot = () => {
   const renderCreateSpotButton = userSpots.length === 0;
 
   return (
-    <>
+    <div className="manage-spot-container">
       <div className="manage">
         <h2>Manage Spots</h2>
         {renderCreateSpotButton && (
@@ -41,19 +41,15 @@ const UserSpot = () => {
           </div>
         )}
       </div>
-      <div className="manage-spots-grid">
+      <div className="spots-grid">
         {userSpots.map((spot) => (
           <div key={spot.id}>
             <>
               <NavLink to={`/spots/${spot.id}`}>
                 <div className="spot-card">
-                  <img
-                    id="spot-card-img"
-                    src={`${spot.previewImage}`}
-                    alt="img"
-                  />
+                  <img id="spot-img" src={`${spot.previewImage}`} alt="img" />
                   <div className="manage-review">
-                    <div className="manage-city">
+                    <div className="city">
                       {spot.city}, {spot.state}
                     </div>
                     {spot.avgRating ? (
@@ -99,7 +95,7 @@ const UserSpot = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

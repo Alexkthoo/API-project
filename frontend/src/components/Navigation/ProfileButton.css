@@ -30,6 +30,9 @@
 
 #hello-email, #hello-manage {
   border-bottom: 1px solid rgb(107, 104, 104);
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .nav-link-create {

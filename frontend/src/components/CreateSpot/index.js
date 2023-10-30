@@ -50,7 +50,8 @@ const CreateSpot = ({ spot }) => {
 
     if (!description) errors.description = "Description is required";
     if (description.length < 30 || description.length > 256)
-      errors.description = "Description needs a minimum of 30 characters and a maximun of 256 characters";
+      errors.description =
+        "Description needs a minimum of 30 characters and a maximun of 256 characters";
 
     if (!name) errors.name = "Name is required";
     if (name.length < 5 || name.length > 30)
@@ -202,12 +203,17 @@ const CreateSpot = ({ spot }) => {
                 rows="5"
                 cols="50"
                 id="form-description"
-                placeholder="Please write at least 30 characters"
+                placeholder="Please write at least 30 characters and no more than 256 characters."
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
-              <p>Current characters {description.length}</p>
+              <p
+                className="description-char-length"
+                style={{ color: description.length > 256 ? "red" : "black" }}
+              >
+                Current characters {description.length}
+              </p>
               {validationErrors.description && submitted && (
                 <p className="errors">{validationErrors.description}</p>
               )}
