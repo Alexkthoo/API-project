@@ -58,7 +58,7 @@ const CreateModal = ({ spotId }) => {
     <>
       <div className="create-review-modal-container">
         <h3>How was your stay?</h3>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="review-form-container">
           <label>
             <textarea
               className="create-review-description"

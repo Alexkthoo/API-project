@@ -3,4 +3,9 @@
 * {
 
     text-decoration: none;
+    font-family: Copperplate, Papyrus, fantasy;
+  }
+
+  body {
+    margin: 0px
   }

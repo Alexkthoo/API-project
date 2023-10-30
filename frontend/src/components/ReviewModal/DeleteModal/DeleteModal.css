@@ -6,6 +6,7 @@
   padding: 24px 24px 18px;
   width: 380px;
   border-radius: 10px;
+  align-items: center;
 }
 
 .modal-button {
@@ -23,8 +24,8 @@
 }
 
 #cancel-button {
-    background-color: #494949;
-  color: #fff;
+  background-color: #104789;
+  color: #efd213;
   width: 250px;
   border-radius: 10px;
 }
