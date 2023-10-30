@@ -192,11 +192,16 @@ const SpotUpdateForm = () => {
                 rows="5"
                 cols="50"
                 id="form-description"
-                placeholder="Please write at least 30 characters"
+                placeholder="Please write at least 30 characters and no more than 256 characters."
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-              />
+              /><p
+              className="description-char-length"
+              style={{ color: description.length > 256 ? "red" : "black" }}
+            >
+              Current characters {description.length}
+            </p>
               {validationErrors.description && submitted && (
                 <p className="errors">{validationErrors.description}</p>
               )}

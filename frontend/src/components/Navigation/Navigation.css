@@ -116,6 +116,7 @@ ul {
   line-height: 30px;
   text-align: center;
 font-size: 13px;
+margin-left: -143px;
 }
 
 
@@ -135,6 +136,9 @@ font-size: 13px;
 
 #hello-email, #hello-manage {
   border-bottom: 1px solid rgb(107, 104, 104);
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 #hello-manage {
@@ -150,4 +154,8 @@ font-size: 13px;
   border: 1px solid #ddd;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+#logout-button {
+  margin-top: 9px;
 }

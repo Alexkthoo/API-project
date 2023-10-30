@@ -37,8 +37,7 @@ margin-bottom: 10px;
 }
 
 .sign-up-submit-button {
-    display: flex;
-    justify-content: center;
+    left: 43%;
 }
 
  .sign-up-form p {
