@@ -14,6 +14,11 @@
 
 }
 
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+}
+
 .sign-up-container h1 {
     display: flex;
     justify-content: center;
@@ -37,7 +42,14 @@ margin-bottom: 10px;
 }
 
 .sign-up-submit-button {
-    left: 43%;
+    border: 1px solid black;
+    background-color: #104789;
+    color: #efd213;
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
  .sign-up-form p {
@@ -61,7 +73,7 @@ margin-bottom: 10px;
 
     background-size: cover;
     border-radius: 10px;
-    
+
 }
 
 #modal-content {

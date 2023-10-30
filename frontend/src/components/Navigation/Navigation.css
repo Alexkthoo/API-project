@@ -178,4 +178,10 @@ font-size: 13px;
 
 #logout-button {
   margin-top: 9px;
+  border: 1px solid black;
+    background-color: #104789;
+    color: #efd213;
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer;
+    border-radius: 10px;
 }

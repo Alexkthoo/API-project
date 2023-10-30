@@ -41,13 +41,17 @@ function LoginFormModal() {
       });
   };
 
+  const disabledTextColor = "white";
+  const disabledBgColor = "grey";
+  const enabledTextColor = "#efd213";
+  const enabledBgColor = "#104789";
+
   // disable login if username has less than 4 char and password less than 6 char
   const disableLogIn = credential.length < 4 || password.length < 6;
 
   return (
     // login
     <div className="login-container">
-
       <h1>Log In</h1>
 
       <form onSubmit={handleSubmit} className="login-form">
@@ -77,10 +81,20 @@ function LoginFormModal() {
         </div>
         {errors.credential && <p>{errors.credential}</p>}
       </form>
-      <button type="submit" disabled={disableLogIn}>
+      <button
+        className="log-in-button"
+        type="submit"
+        disabled={disableLogIn}
+        style={{
+          color: disableLogIn ? disabledTextColor : enabledTextColor,
+          backgroundColor: disableLogIn ? disabledBgColor : enabledBgColor,
+        }}
+      >
         Log In
       </button>
-      <button onClick={handleLogInDemo}>Log in as Demo User</button>
+      <button className="demo-button" onClick={handleLogInDemo}>
+        Log in as Demo User
+      </button>
     </div>
   );
 }

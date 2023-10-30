@@ -4,7 +4,7 @@
 
 .spot-description-box {
     overflow-wrap: break-word;
-  width: 550px;
+  width: 585px;
 }
 
 .spotId-container {
@@ -18,6 +18,7 @@
     width: 60%;
     margin-right: 0px;
     /* border-radius: 15px 0px 0px 15px; */
+    border-radius: 10px;
 }
 
 /* #spotId-main-image {
@@ -70,6 +71,7 @@
     width: 100%;
     object-fit: cover;
     padding: 0px;
+    border-radius: 10px;
 }
 
 .description-container {
@@ -92,35 +94,37 @@
 .right-description {
     border: 2px solid black;
     border-radius: 10px 10px 10px;
-    margin-right: 50px;
+    margin-right: 31px;
     padding-top: 25px;
     padding-bottom: 25px;
-    padding-right: 20px;
-    padding-left: 20px;
+    /* padding-right: 20px; */
+    /* padding-left: 20px; */
     width: fit-content;
     height: 50px;
 }
 
 .price-star {
     display: flex;
-    justify-content: space-between;
-    gap: 100px;
+  /* justify-content: space-between; */
+  gap: 16px;
+  padding-left: 53px;
 }
 
 #reserve-button {
     margin-top: 10px;
     margin-left: 50px;
     margin-right: 50px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 66px;
+    padding-right: 66px;
     background-color: #104789;
     color: #efd213;
     /* box-shadow: 3px 3px 3px rgba(13, 13, 14, 0.2); */
     cursor: pointer;
     border-radius: 10px;
     height: 30px;
-    font-size: 16px;
+    font-size: 14px;
     box-shadow: 3px 3px 3px black;
+    width: 201px;
 }
 
 .top-reviews {
@@ -131,6 +135,7 @@
 
 .inside-price-star {
     display: flex;
+    align-items: baseline;
 }
 
 #num-reviews {
