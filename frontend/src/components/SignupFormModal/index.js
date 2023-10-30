@@ -52,6 +52,11 @@ function SignupFormModal() {
     username.length < 4 ||
     password.length < 6;
 
+  const disabledTextColor = "white";
+  const disabledBgColor = "grey";
+  const enabledTextColor = "#efd213";
+  const enabledBgColor = "#104789";
+
   return (
     <div className="sign-up-container">
       <div className="sign-up-sign">
@@ -141,6 +146,10 @@ function SignupFormModal() {
             type="submit"
             disabled={disableSignUp}
             className="sign-up-submit-button"
+            style={{
+              color: disableSignUp ? disabledTextColor : enabledTextColor,
+              backgroundColor: disableSignUp ? disabledBgColor : enabledBgColor,
+            }}
           >
             Sign Up
           </button>
