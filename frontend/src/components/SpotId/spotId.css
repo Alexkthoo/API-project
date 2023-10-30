@@ -2,18 +2,21 @@
     margin-left: 50px;
 }
 
-
+.spot-description-box {
+    overflow-wrap: break-word;
+  width: 550px;
+}
 
 .spotId-container {
     margin-bottom: 10px;
 }
 
 #spotId-main-image {
-    height: 320px;
+    height: 350px;
     object-fit: cover;
     margin-left: 50px;
-    width: 54%;
-    margin-right: 2px;
+    width: 60%;
+    margin-right: 0px;
     /* border-radius: 15px 0px 0px 15px; */
 }
 
@@ -55,14 +58,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 6px;
-    width: 300px;
+    width: 356px;
     margin-left: 4px;
-    height: 319px;
+    height: 349px;
 }
 
 
  .grid-images {
-    height: 157px;
+    height: 172px;
     width: 100%;
     object-fit: cover;
     padding: 0px;
