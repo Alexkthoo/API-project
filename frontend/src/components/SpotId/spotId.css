@@ -126,7 +126,7 @@
 .top-reviews {
     margin-top: 1rem;
     display: flex;
-    margin-left: 50px;
+
 }
 
 .inside-price-star {
@@ -139,6 +139,7 @@
 
 .reviews-container {
     margin-bottom: 100px;
+    margin-left: 50px;
 
 }
 
