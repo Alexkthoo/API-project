@@ -75,7 +75,7 @@ const SpotId = () => {
       <div className="description-container">
         <div className="left-description">
           Hosted by {Spot?.Owner?.firstName} {Spot?.Owner?.lastName}
-          <p>{Spot.description}</p>
+          <p className="spot-description-box">{Spot.description}</p>
         </div>
         <div className="right-description">
           <div className="price-star">
