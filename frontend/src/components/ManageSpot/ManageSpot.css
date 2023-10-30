@@ -4,7 +4,7 @@
 
 #new-spot-manage {
     margin-bottom: 10px;
-    margin-left: 100px;
+    
     width: fit-content;
 }
 
@@ -74,5 +74,3 @@
 .spots-grid-update-button {
     padding-bottom: 12px;
 }
-
-
