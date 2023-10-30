@@ -18,6 +18,7 @@
     /* border: 5px dotted pink; */
     padding-bottom: 10px;
     /* right:0; */
+    width: 1000px;
 }
 
 
@@ -126,7 +127,7 @@ margin-left: -143px;
   box-shadow: 0 6px 16px rgba(0,0,0,.12);
   list-style: none;
   margin-top: 10px;
-  /* min-width: 39px; */
+  min-width: 49px;
   padding: 10px;
   /* margin-right: -22px; */
   /* width: 500px; */

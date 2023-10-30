@@ -18,10 +18,11 @@
     width: 150px;
     margin-right: 50px;
     margin-left: 0px;
-    background-color: rgb(107, 104, 104);
-    color: white;
+    background-color: #104789;
+    color: #efd213;
     box-shadow: 3px 3px 3px black;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 #delete-review-home {
