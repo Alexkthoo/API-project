@@ -40,7 +40,7 @@
   margin-right: 5px;
   display: flex;
   justify-content: flex-start;
-  max-height: 50px;
+  /* max-height: 50px; */
   /* position: fixed; */
   align-items: baseline;
 
