@@ -80,21 +80,23 @@ function LoginFormModal() {
           </label>
         </div>
         {errors.credential && <p>{errors.credential}</p>}
+        <div className="login-buttons-container">
+          <button
+            className="log-in-button"
+            type="submit"
+            disabled={disableLogIn}
+            style={{
+              color: disableLogIn ? disabledTextColor : enabledTextColor,
+              backgroundColor: disableLogIn ? disabledBgColor : enabledBgColor,
+            }}
+          >
+            Log In
+          </button>
+          <button className="demo-button" onClick={handleLogInDemo}>
+            Log in as Demo User
+          </button>
+        </div>
       </form>
-      <button
-        className="log-in-button"
-        type="submit"
-        disabled={disableLogIn}
-        style={{
-          color: disableLogIn ? disabledTextColor : enabledTextColor,
-          backgroundColor: disableLogIn ? disabledBgColor : enabledBgColor,
-        }}
-      >
-        Log In
-      </button>
-      <button className="demo-button" onClick={handleLogInDemo}>
-        Log in as Demo User
-      </button>
     </div>
   );
 }
