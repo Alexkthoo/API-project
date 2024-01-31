@@ -80,7 +80,7 @@ module.exports = {
           price: 50,
         },
         {
-          ownerId: 6,
+          ownerId: 1,
           address: "Darnassus",
           city: "Teldrassil",
           state: "Kalimdor",
@@ -93,7 +93,7 @@ module.exports = {
           price: 350.75,
         },
         {
-          ownerId: 7,
+          ownerId: 2,
           address: "Undercity",
           city: "Tirisfal Glades",
           state: "Eastern Kingdoms",
@@ -106,7 +106,7 @@ module.exports = {
           price: 180.25,
         },
         {
-          ownerId: 8,
+          ownerId: 3,
           address: "Gnomeregan",
           city: "Dun Morogh",
           state: "Eastern Kingdoms",
@@ -119,7 +119,7 @@ module.exports = {
           price: 400.50,
         },
         {
-          ownerId: 9,
+          ownerId: 4,
           address: "Exodar",
           city: "Azuremyst Isle",
           state: "Kalimdor",
@@ -132,7 +132,7 @@ module.exports = {
           price: 275.60,
         },
         {
-          ownerId: 10,
+          ownerId: 5,
           address: "Shattrath City",
           city: "Terokkar Forest",
           state: "Outland",

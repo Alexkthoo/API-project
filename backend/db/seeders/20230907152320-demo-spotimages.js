@@ -140,27 +140,127 @@ module.exports = {
         },
         {
           spotId: 6,
-          url: "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fm13j6651fqma1.jpg",
+          url: "https://i.pinimg.com/originals/59/13/0f/59130fe619c0520a424b62e1b2e5670e.jpg",
           preview: true,
         },
         {
           spotId: 6,
-          url: "https://i.ytimg.com/vi/lXMguMnsyak/maxresdefault.jpg",
+          url: "https://i.pinimg.com/originals/59/13/0f/59130fe619c0520a424b62e1b2e5670e.jpg",
           preview: false,
         },
         {
           spotId: 6,
-          url: "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fm13j6651fqma1.jpg",
+          url: "https://i.pinimg.com/originals/36/79/63/367963d932d9bbe78387f19585479811.jpg",
           preview: false,
         },
         {
           spotId: 6,
-          url: "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fm13j6651fqma1.jpg",
+          url: "https://i.pinimg.com/originals/59/13/0f/59130fe619c0520a424b62e1b2e5670e.jpg",
           preview: false,
         },
         {
           spotId: 6,
-          url: "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fm13j6651fqma1.jpg",
+          url: "https://i.pinimg.com/originals/59/13/0f/59130fe619c0520a424b62e1b2e5670e.jpg",
+          preview: false,
+        },
+        {
+          spotId: 7,
+          url: "https://i.pinimg.com/originals/36/79/63/367963d932d9bbe78387f19585479811.jpg",
+          preview: true,
+        },
+        {
+          spotId: 7,
+          url: "https://i.pinimg.com/originals/36/79/63/367963d932d9bbe78387f19585479811.jpg",
+          preview: false,
+        },
+        {
+          spotId: 7,
+          url: "https://i.pinimg.com/originals/36/79/63/367963d932d9bbe78387f19585479811.jpg",
+          preview: false,
+        },
+        {
+          spotId: 7,
+          url: "https://i.pinimg.com/originals/36/79/63/367963d932d9bbe78387f19585479811.jpg",
+          preview: false,
+        },
+        {
+          spotId: 7,
+          url: "https://i.pinimg.com/originals/36/79/63/367963d932d9bbe78387f19585479811.jpg",
+          preview: false,
+        },
+        {
+          spotId: 8,
+          url: "https://helios-i.mashable.com/imagery/articles/06yDnMdsO86nqApqf7PtOdU/images-6.fill.size_2000x1125.v1611698841.jpg",
+          preview: true,
+        },
+        {
+          spotId: 8,
+          url: "https://helios-i.mashable.com/imagery/articles/06yDnMdsO86nqApqf7PtOdU/images-6.fill.size_2000x1125.v1611698841.jpg",
+          preview: false,
+        },
+        {
+          spotId: 8,
+          url: "https://helios-i.mashable.com/imagery/articles/06yDnMdsO86nqApqf7PtOdU/images-6.fill.size_2000x1125.v1611698841.jpg",
+          preview: false,
+        },
+        {
+          spotId: 8,
+          url: "https://helios-i.mashable.com/imagery/articles/06yDnMdsO86nqApqf7PtOdU/images-6.fill.size_2000x1125.v1611698841.jpg",
+          preview: false,
+        },
+        {
+          spotId: 8,
+          url: "https://helios-i.mashable.com/imagery/articles/06yDnMdsO86nqApqf7PtOdU/images-6.fill.size_2000x1125.v1611698841.jpg",
+          preview: false,
+        },
+        {
+          spotId: 9,
+          url: "https://gamepedia.cursecdn.com/wowpedia/f/fa/Traveler_Concept_Drawing.jpg",
+          preview: true,
+        },
+        {
+          spotId: 9,
+          url: "https://gamepedia.cursecdn.com/wowpedia/f/fa/Traveler_Concept_Drawing.jpg",
+          preview: false,
+        },
+        {
+          spotId: 9,
+          url: "https://gamepedia.cursecdn.com/wowpedia/f/fa/Traveler_Concept_Drawing.jpg",
+          preview: false,
+        },
+        {
+          spotId: 9,
+          url: "https://gamepedia.cursecdn.com/wowpedia/f/fa/Traveler_Concept_Drawing.jpg",
+          preview: false,
+        },
+        {
+          spotId: 9,
+          url: "https://gamepedia.cursecdn.com/wowpedia/f/fa/Traveler_Concept_Drawing.jpg",
+          preview: false,
+        },
+        {
+          spotId: 10,
+          url: "https://64.media.tumblr.com/5d45ac602dfbb71c92d383d3fdb2c861/841481df0dedf376-53/s1280x1920/59d01927e35ed14af9e7e4dc0d516650959e1f99.jpg",
+          preview: true,
+        },
+        {
+          spotId: 10,
+          url: "https://64.media.tumblr.com/5d45ac602dfbb71c92d383d3fdb2c861/841481df0dedf376-53/s1280x1920/59d01927e35ed14af9e7e4dc0d516650959e1f99.jpg",
+          preview: false,
+        },
+        {
+          spotId: 10,
+          url: "https://64.media.tumblr.com/5d45ac602dfbb71c92d383d3fdb2c861/841481df0dedf376-53/s1280x1920/59d01927e35ed14af9e7e4dc0d516650959e1f99.jpg",
+          preview: false,
+        },
+        {
+          spotId: 10,
+          url: "https://64.media.tumblr.com/5d45ac602dfbb71c92d383d3fdb2c861/841481df0dedf376-53/s1280x1920/59d01927e35ed14af9e7e4dc0d516650959e1f99.jpg",
+          preview: false,
+        },
+        {
+          spotId: 10,
+          url: "https://64.media.tumblr.com/5d45ac602dfbb71c92d383d3fdb2c861/841481df0dedf376-53/s1280x1920/59d01927e35ed14af9e7e4dc0d516650959e1f99.jpg",
           preview: false,
         },
       ],
