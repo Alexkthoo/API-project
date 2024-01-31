@@ -138,6 +138,31 @@ module.exports = {
           url: "https://mmo-sankar.de/wp-content/uploads/2021/11/wow-classic-levelgebiete-allianz-horde.jpg",
           preview: false,
         },
+        {
+          spotId: 6,
+          url: "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fm13j6651fqma1.jpg",
+          preview: true,
+        },
+        {
+          spotId: 6,
+          url: "https://i.ytimg.com/vi/lXMguMnsyak/maxresdefault.jpg",
+          preview: false,
+        },
+        {
+          spotId: 6,
+          url: "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fm13j6651fqma1.jpg",
+          preview: false,
+        },
+        {
+          spotId: 6,
+          url: "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fm13j6651fqma1.jpg",
+          preview: false,
+        },
+        {
+          spotId: 6,
+          url: "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fm13j6651fqma1.jpg",
+          preview: false,
+        },
       ],
       { validate: true }
     );
